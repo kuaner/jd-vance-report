@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第六章：伊朗困境 — J.D. Vance：七个面孔</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Space+Grotesk:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg-dark:oklch(0.11 0.015 30);--bg-dark-alt:oklch(0.14 0.018 30);--bg-light:oklch(0.965 0.004 70);--text-light:oklch(0.92 0.006 70);--text-light-dim:oklch(0.72 0.012 65);--text-dark:oklch(0.13 0.02 30);--text-dark-sec:oklch(0.38 0.015 30);--text-dark-muted:oklch(0.58 0.01 55);--accent:oklch(0.55 0.22 30);--accent-light:oklch(0.68 0.16 32);--accent-dim:oklch(0.30 0.08 30);--border-dark:oklch(0.25 0.02 30);--border-light:oklch(0.85 0.008 70);--serif:'Playfair Display',Georgia,serif;--sans:'Noto Sans SC',system-ui,sans-serif;--mono:'Space Grotesk',monospace;--wide:1140px;--narrow:680px;--pad:clamp(1.5rem,5vw,4rem);}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+body{font-family:var(--sans);background:var(--bg-dark);color:var(--text-light);line-height:1.8;font-size:16px;}
+a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;height:auto;}
+.masthead{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 0 0 var(--pad);height:56px;display:flex;align-items:center;justify-content:space-between;background:oklch(0.11 0.015 30/0.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
+.masthead .back{font-family:var(--mono);font-size:0.6rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-light-dim);}
+.masthead .back span{color:var(--accent);}
+.masthead .ch-tag{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.06em;color:oklch(0.50 0.01 55);padding-right:var(--pad);}
+.wide-wrap{max-width:var(--wide);margin:0 auto;padding:0 var(--pad);}
+.narrow-wrap{max-width:var(--narrow);margin:0 auto;padding:0 var(--pad);}
+.hero{position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;z-index:0;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:grayscale(0.4) contrast(1.1) brightness(0.55);}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,oklch(0.11 0.015 30/0.3) 0%,oklch(0.11 0.015 30/0.7) 60%,oklch(0.11 0.015 30/0.97) 100%);}
+.hero-content{position:relative;z-index:1;padding:clamp(5rem,12vw,10rem) var(--pad) clamp(3.5rem,8vw,6rem);max-width:var(--wide);margin:0 auto;width:100%;}
+.hero-ch{font-family:var(--mono);font-size:0.6rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;}
+.hero-ch::before{content:'';width:24px;height:1px;background:var(--accent);}
+.hero-title{font-family:var(--serif);font-weight:900;line-height:1.08;color:var(--text-light);margin-bottom:0.75rem;}
+.hero-title .zh{font-size:clamp(2.6rem,6vw,4.5rem);display:block;}
+.hero-title .en{font-size:clamp(1.4rem,3vw,2.2rem);display:block;font-weight:400;font-style:italic;color:var(--text-light-dim);}
+.hero-sub{font-size:clamp(0.85rem,1.3vw,0.95rem);color:var(--text-light-dim);line-height:1.6;max-width:600px;}
+.sec-dark{background:var(--bg-dark);color:var(--text-light);}
+.sec-dark-alt{background:var(--bg-dark-alt);color:var(--text-light);}
+.sec-light{background:var(--bg-light);color:var(--text-dark);}
+.section-pad{padding:clamp(3rem,7vw,5.5rem) 0;}
+.prose p{font-size:clamp(0.95rem,1.2vw,1.05rem);line-height:1.9;margin-bottom:1.4rem;}
+.prose p:last-child{margin-bottom:0;} .prose strong{font-weight:700;} .prose em{font-style:italic;}
+.sec-heading{font-family:var(--serif);font-weight:900;line-height:1.15;margin-bottom:2rem;}
+.sec-dark .sec-heading,.sec-dark-alt .sec-heading{color:var(--text-light);font-size:clamp(1.8rem,3.5vw,2.6rem);}
+.sec-light .sec-heading{color:var(--text-dark);font-size:clamp(1.8rem,3.5vw,2.6rem);}
+.sec-num{font-family:var(--mono);font-size:0.6rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.75rem;}
+.sec-dark .sec-num,.sec-dark-alt .sec-num{color:var(--accent);}
+.sec-light .sec-num{color:var(--text-dark-muted);}
+.blockquote-vance{padding:clamp(1.25rem,2.5vw,2rem);border-left:3px solid var(--accent);margin:clamp(1.5rem,3vw,2.5rem) 0;}
+.sec-dark .blockquote-vance,.sec-dark-alt .blockquote-vance{background:oklch(0.18 0.02 30);}
+.sec-light .blockquote-vance{background:oklch(0.93 0.006 70);}
+.blockquote-vance p{font-family:var(--serif);font-size:clamp(1.05rem,1.6vw,1.2rem);font-style:italic;line-height:1.65;}
+.sec-dark .blockquote-vance p,.sec-dark-alt .blockquote-vance p{color:var(--text-light);}
+.sec-light .blockquote-vance p{color:var(--text-dark);}
+.blockquote-vance .bq-src{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.06em;margin-top:0.6rem;}
+.sec-dark .blockquote-vance .bq-src,.sec-dark-alt .blockquote-vance .bq-src{color:var(--text-light-dim);}
+.sec-light .blockquote-vance .bq-src{color:var(--text-dark-muted);}
+.photo-break{width:100%;height:clamp(240px,35vw,420px);overflow:hidden;position:relative;}
+.photo-break img{width:100%;height:100%;object-fit:cover;filter:grayscale(0.3) contrast(1.08);}
+.photo-break .cap{position:absolute;bottom:0;left:0;right:0;padding:1rem var(--pad);background:linear-gradient(0deg,oklch(0.11 0.015 30/0.8) 0%,transparent 100%);font-family:var(--mono);font-size:0.6rem;letter-spacing:0.06em;color:var(--text-light-dim);}
+.inline-img{margin:clamp(1.5rem,3vw,2.5rem) 0;}
+.inline-img img{width:100%;max-height:clamp(280px,40vw,480px);object-fit:cover;object-position:center 30%;filter:grayscale(0.25) contrast(1.06);}
+.inline-img .cap{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.06em;color:var(--text-light-dim);margin-top:0.5rem;}
+.sec-light .inline-img .cap{color:var(--text-dark-muted);}
+.source-list{list-style:none;}
+.source-list li{font-size:0.75rem;color:var(--text-light-dim);line-height:1.7;padding:0.3rem 0;border-bottom:1px solid oklch(0.20 0.015 30);font-family:var(--mono);}
+.source-list li strong{color:var(--text-light);font-weight:500;font-family:var(--sans);}
+.ch-nav{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--border-dark);}
+.ch-nav-link{display:block;padding:clamp(1.5rem,3vw,2.5rem);font-family:var(--mono);font-size:0.7rem;letter-spacing:0.08em;color:var(--text-light-dim);transition:background 0.2s ease;}
+.ch-nav-link:first-child{border-right:1px solid var(--border-dark);}
+.ch-nav-link:hover{background:var(--bg-dark-alt);}
+.ch-nav-link .label{font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:oklch(0.40 0.01 55);margin-bottom:0.3rem;}
+.ch-nav-link .title{color:var(--text-light);font-family:var(--serif);font-size:1rem;font-weight:700;}
+.foot{padding:2rem 0;text-align:center;}
+.foot p{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.14em;color:oklch(0.40 0.01 55);text-transform:uppercase;}
+.rv{opacity:0;transform:translateY(20px);transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),transform 0.7s cubic-bezier(0.16,1,0.3,1);}
+.rv.vis{opacity:1;transform:translateY(0);}
+
+/* IMAGE PLACEHOLDER */
+.img-placeholder{width:100%;aspect-ratio:16/9;background:var(--bg-dark-alt);border:1px solid var(--border-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text-light-dim);font-family:var(--mono);font-size:0.75rem;letter-spacing:0.05em;text-align:center;padding:1rem;}
+.img-placeholder .ph-src{font-size:0.55rem;color:oklch(0.40 0.01 55);margin-top:0.35rem;letter-spacing:0.08em;text-transform:uppercase;}
+.sec-light .img-placeholder{background:oklch(0.93 0.006 70);border-color:var(--border-light);color:var(--text-dark-muted);}
+.sec-light .img-placeholder .ph-src{color:var(--text-dark-muted);}
+
+/* DATA CARDS STRIP */
+.data-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border-dark);margin:clamp(2rem,4vw,3rem) 0;}
+.data-card{background:var(--bg-dark);padding:clamp(1.25rem,2.5vw,2rem);text-align:center;}
+.data-card .dc-val{font-family:var(--mono);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;color:var(--accent-light);line-height:1;}
+.data-card .dc-label{font-size:0.7rem;color:var(--text-light-dim);margin-top:0.5rem;line-height:1.4;}
+.data-card .dc-sub{font-family:var(--mono);font-size:0.55rem;color:oklch(0.40 0.01 55);margin-top:0.3rem;letter-spacing:0.06em;}
+
+/* POLICY FAILURE CARDS */
+.policy-failures{display:grid;grid-template-columns:1fr;gap:1px;margin:clamp(2rem,4vw,3rem) 0;background:var(--border-dark);border:1px solid var(--border-dark);}
+.pf-card{background:var(--bg-dark-alt);padding:clamp(1rem,2.5vw,1.5rem) clamp(1.25rem,3vw,2rem);display:grid;grid-template-columns:clamp(100px,12vw,140px) 1fr auto;gap:clamp(0.75rem,1.5vw,1.5rem);align-items:start;}
+.pf-label{font-family:var(--mono);font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);padding-top:0.1rem;}
+.pf-content{display:flex;flex-direction:column;gap:0.5rem;}
+.pf-wanted{font-size:clamp(0.82rem,1vw,0.9rem);line-height:1.55;color:var(--text-light-dim);text-decoration:line-through;text-decoration-color:oklch(0.55 0.15 25);text-decoration-thickness:1px;}
+.pf-wanted::before{content:'主张 ';font-family:var(--mono);font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;color:oklch(0.45 0.01 55);text-decoration:none;margin-right:0.3rem;}
+.pf-got{font-size:clamp(0.85rem,1.05vw,0.95rem);line-height:1.55;color:var(--text-light);font-weight:500;}
+.pf-got::before{content:'现实 ';font-family:var(--mono);font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;color:oklch(0.55 0.15 25);margin-right:0.3rem;}
+.pf-indicator{width:36px;height:36px;border-radius:50%;background:oklch(0.22 0.04 25);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.15rem;}
+.pf-indicator svg{width:16px;height:16px;stroke:oklch(0.55 0.18 25);stroke-width:2;fill:none;}
+
+/* SENTIMENT BARS */
+.sentiment-chart{margin:clamp(2rem,4vw,3rem) 0;}
+.sentiment-group{display:grid;grid-template-columns:clamp(100px,12vw,140px) 1fr;gap:0 1.5rem;align-items:center;margin-bottom:clamp(1rem,2vw,1.5rem);padding-bottom:clamp(1rem,2vw,1.5rem);border-bottom:1px solid var(--border-dark);}
+.sentiment-group:last-child{border-bottom:none;}
+.s-label{font-family:var(--mono);font-size:0.65rem;font-weight:700;letter-spacing:0.06em;color:var(--accent);}
+.s-label .s-sub{display:block;font-size:0.55rem;color:var(--text-light-dim);font-weight:400;margin-top:0.15rem;}
+.s-bar-wrap{display:flex;flex-direction:column;gap:0.3rem;}
+.s-bar-row{display:flex;align-items:center;gap:0.75rem;}
+.s-bar-label{font-family:var(--mono);font-size:0.55rem;color:var(--text-light-dim);width:50px;text-align:right;flex-shrink:0;}
+.s-bar-track{flex:1;height:8px;background:oklch(0.20 0.02 30);border-radius:1px;overflow:hidden;}
+.s-bar-fill{height:100%;border-radius:1px;}
+.s-bar-fill.support{background:var(--accent-light);}
+.s-bar-fill.oppose{background:oklch(0.55 0.18 25);}
+.s-bar-val{font-family:var(--mono);font-size:0.6rem;color:var(--text-light-dim);width:30px;flex-shrink:0;}
+
+/* POWER COMPARISON */
+.power-comp{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border-light);margin:clamp(2rem,4vw,3rem) 0;}
+.power-col{background:var(--bg-light);padding:clamp(1.25rem,2.5vw,2rem);}
+.power-col .pc-name{font-family:var(--serif);font-size:clamp(1.3rem,2.2vw,1.7rem);font-weight:900;color:var(--text-dark);margin-bottom:0.15rem;}
+.power-col .pc-role{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-dark-muted);margin-bottom:1.25rem;}
+.power-col .pc-item{padding:0.6rem 0;border-bottom:1px solid var(--border-light);}
+.power-col .pc-item:last-child{border-bottom:none;}
+.power-col .pc-cat{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-dark-muted);margin-bottom:0.2rem;}
+.power-col .pc-val{font-size:0.85rem;color:var(--text-dark-sec);line-height:1.5;}
+.power-col .pc-val strong{color:var(--text-dark);font-weight:700;}
+
+/* TIMELINE */
+.timeline{margin:clamp(2rem,4vw,3rem) 0;}
+.tl-item{display:grid;grid-template-columns:clamp(120px,15vw,180px) 1fr;gap:1rem;padding:clamp(0.75rem,1.5vw,1.25rem) 0;border-bottom:1px solid var(--border-dark);}
+.tl-item:last-child{border-bottom:none;}
+.tl-date{font-family:var(--mono);font-size:0.65rem;font-weight:500;letter-spacing:0.06em;color:var(--accent);padding-top:0.15rem;}
+.tl-body .tl-title{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-light);margin-bottom:0.2rem;}
+.tl-body .tl-desc{font-size:0.85rem;color:var(--text-light-dim);line-height:1.5;}
+
+/* REACTION GRID */
+.reaction-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;background:var(--border-dark);margin:clamp(2rem,4vw,3rem) 0;}
+.reaction-card{background:var(--bg-dark-alt);padding:clamp(1rem,2vw,1.5rem);}
+.reaction-card .rc-who{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--accent-light);margin-bottom:0.15rem;}
+.reaction-card .rc-role{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-light-dim);margin-bottom:0.6rem;}
+.reaction-card .rc-quote{font-family:var(--serif);font-size:0.9rem;font-style:italic;line-height:1.55;color:var(--text-light);}
+
+/* SUB HEADING */
+.sub-heading{font-family:var(--serif);font-size:clamp(1.15rem,1.8vw,1.4rem);font-weight:700;margin-bottom:1rem;margin-top:1.5rem;}
+.sec-dark .sub-heading,.sec-dark-alt .sub-heading{color:var(--text-light);}
+.sec-light .sub-heading{color:var(--text-dark);}
+
+@media(max-width:900px){.power-comp{grid-template-columns:1fr;}.data-strip{grid-template-columns:1fr 1fr;}.pf-card{grid-template-columns:1fr auto;}.pf-label{grid-column:1/-1;}}
+@media(max-width:640px){.ch-nav{grid-template-columns:1fr;}.ch-nav-link:first-child{border-right:none;border-bottom:1px solid var(--border-dark);}.reaction-grid{grid-template-columns:1fr;}.timeline .tl-item{grid-template-columns:1fr;}.tl-date{font-size:0.6rem;}.data-strip{grid-template-columns:1fr 1fr;}.sentiment-group{grid-template-columns:1fr;gap:0.5rem;}.s-bar-wrap{width:100%;}.pf-card{grid-template-columns:1fr;gap:0.75rem;}.pf-indicator{justify-self:start;}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <a href="index.html" class="back"><span>&larr;</span> &nbsp;J.D. Vance：七个面孔</a>
+  <div class="ch-tag">Chapter VI of VII</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"><img src="assets/vance-speech-01.jpg" alt="Vance speaking at a public event"></div>
+  <div class="hero-content">
+    <div class="hero-ch">Chapter VI</div>
+    <h1 class="hero-title"><span class="zh">伊朗困境</span><span class="en">The Iran Trap: When Anti-Warriors Get Strapped to the Chariot</span></h1>
+    <p class="hero-sub">2026 年 2 月 28 日，代号"史诗之怒"的军事行动正式启动。一个在竞选期间反复承诺"美国不会对伊朗开战"的副总统，发现自己不在决策房间里。</p>
+  </div>
+</section>
+
+<!-- Section 一: 战情室里的 Diet Mountain Dew -->
+<section class="section-pad sec-dark">
+  <div class="wide-wrap rv">
+    <div class="sec-num">Section I</div>
+    <h2 class="sec-heading">战情室里的 Diet Mountain Dew</h2>
+    <div class="narrow-wrap prose">
+      <p>2026年2月28日，代号"史诗之怒"（Operation Epic Fury）的军事行动正式启动。美以联合轰炸机群从多个基地升空，向伊朗境内的弹道导弹设施倾泻弹药。B-2隐身轰炸机的首次打击标志着这场战争进入了一个不可逆的阶段。</p>
+      <p>在这个历史性的时刻，美国总统 Donald Trump 坐镇Florida州 Mar-a-Lago 的战情室，身旁是国务卿 Marco Rubio、国防部长 Pete Hegseth 和国家安全顾问。屏幕上的卫星画面实时显示着波斯湾上空的轰炸路径。</p>
+      <p>而美国副总统 J.D. Vance，这个在竞选期间反复承诺"美国不会对伊朗开战"的人，不在那个房间里。</p>
+    </div>
+
+    <div class="wide-wrap inline-img rv" style="margin-top:clamp(1.5rem,3vw,2.5rem);">
+      <img src="assets/iran-war-02-situation-room.jpg" alt="Vance and Cabinet Secretaries in the White House Situation Room">
+      <div class="cap">白宫官方照片：Vance 与内阁成员在华盛顿战情室，身旁是一罐 Diet Mountain Dew。Feb 28, 2026。</div>
+    </div>
+
+    <div class="narrow-wrap prose rv">
+      <p>白宫释放的照片显示，Vance 被独自留在Washington的战情室"二楼"——通过安全视频会议接入指挥链。他的身旁是一罐 Diet Mountain Dew 和表情阴沉的国家情报总监 Tulsi Gabbard。La Voce di New York 的报道用一个简洁的句子概括了这个画面的荒诞感："当Washington向德黑兰发射炸弹时，塑造行动的小圈子中缺失了一张面孔：JD Vance。"</p>
+      <p>这个画面之所以令人震撼，不是因为它展示了 Vance 的无能——而是因为它完美地隐喻了他在整个行政当局中的地位。一个曾经在参议院听证会上雄辩滔滔、在Munich安全会议上让欧洲领导人脸色铁青的政治明星，此刻坐在战情室的角落里，手里握着一罐低卡汽水，看着别人打一场他反对的战争。</p>
+      <p>Vance 的 X 账号在那整个周末"异常安静"。没有推文，没有声明，没有任何对这场他本应参与决策的战争的个人表态。这种沉默本身就是一种修辞——它比任何辩解都更有力地暴露了他的处境。</p>
+      <p>3月2日，Marjorie Taylor Greene 在 Megyn Kelly 的节目中问出了一个整个 MAGA 基本盘都在想的问题："JD Vance 到底在哪里？"</p>
+    </div>
+  </div>
+</section>
+
+<!-- Section 二: "The Humiliation of J.D. Vance" -->
+<section class="section-pad sec-light">
+  <div class="wide-wrap rv">
+    <div class="sec-num">Section II</div>
+    <h2 class="sec-heading">"The Humiliation of J.D. Vance"</h2>
+    <div class="narrow-wrap prose">
+      <p>2026年3月5日，The Atlantic 发表了 Idrees Kahloon 撰写的长文《The Humiliation of J.D. Vance》（J.D. Vance 的屈辱）。这篇文章不是一篇普通的政治评论——它是迄今对 Vance 在白宫中被系统性地边缘化进行的最精准的外科手术式解剖。</p>
+      <p>文章的核心论点只有一句话："Trump's war with Iran shows that, within the administration, the vice president's opinions matter less and less." <em>[注1]</em></p>
+      <p>Kahloon 的分析沿着五条线索展开，每一条都指向同一个结论：Vance 不是一个有影响力的副总统，他是一个被展示的摆件。</p>
+    </div>
+
+    <!-- Placeholder for Atlantic article image -->
+    <div class="wide-wrap inline-img rv" style="margin-top:clamp(1.5rem,3vw,2.5rem);">
+      <img src="assets/iran-war-01-atlantic-vance.png" alt="Atlantic 'The Humiliation of J.D. Vance' article illustration">
+      <div class="cap">Atlantic 封面故事配图："The Humiliation of J.D. Vance"，Mar 5, 2026。</div>
+    </div>
+
+    <!-- 第一条线索 -->
+    <div class="narrow-wrap prose rv">
+      <h3 class="sub-heading">第一条线索：竞选承诺的彻底崩塌</h3>
+      <p>Kahloon 用 Vance 自己的话来反杀 Vance。2024年竞选期间，Vance 对 Tim Dillon 说："我们的利益，我认为非常明显，是不与伊朗开战。那将是资源的巨大分散，对我国来说将是极其昂贵的。"对 Shawn Ryan 的播客，他更加直白：以色列和伊朗之间的战争是"引发第三次世界大战最可能、最危险的情况"。</p>
+      <p>2026年2月26日——战争爆发前两天——Vance 还在接受Washington邮报采访时说自己是"外国军事干预的怀疑者"，"我们都倾向外交选项"。</p>
+      <p>然后炸弹落下了。Vance 的这些承诺在硝烟中化为灰烬。</p>
+    </div>
+
+    <!-- 第二条线索: 5-domain failure matrix -->
+    <h3 class="sub-heading rv" style="max-width:var(--narrow);margin-left:auto;margin-right:auto;">第二条线索：五个政策领域的全面溃败</h3>
+
+    <div class="narrow-wrap prose rv">
+      <p>Kahloon 的文章最具杀伤力的部分不是关于伊朗——而是它展示了一个全景式的权力地图。在这张地图上，Vance 几乎在每个政策领域都被击败了。</p>
+    </div>
+
+    <!-- 5-Domain Policy Failure Matrix -->
+    <div class="policy-failures rv">
+      <div class="pf-card">
+        <div class="pf-label">外交政策</div>
+        <div class="pf-content">
+          <div class="pf-wanted">不同时多条战线作战，不消耗稀缺弹药于地区冲突</div>
+          <div class="pf-got">导弹拦截器消耗在中东的 discretionary war 中；Ukraine 援助被扩大；伊朗决策被完全绕过</div>
+        </div>
+        <div class="pf-indicator"><svg viewBox="0 0 16 16"><line x1="4" y1="4" x2="12" y2="12"/><line x1="12" y1="4" x2="4" y2="12"/></svg></div>
+      </div>
+      <div class="pf-card">
+        <div class="pf-label">经济政策</div>
+        <div class="pf-content">
+          <div class="pf-wanted">儿童税收抵免扩大至 $5000；工会化、拆分大科技、加速反垄断</div>
+          <div class="pf-got">OBBBA 仅提高至 $2200；"除了关税——几乎看不出任何 Vanceism"</div>
+        </div>
+        <div class="pf-indicator"><svg viewBox="0 0 16 16"><line x1="4" y1="4" x2="12" y2="12"/><line x1="12" y1="4" x2="4" y2="12"/></svg></div>
+      </div>
+      <div class="pf-card">
+        <div class="pf-label">AI 政策</div>
+        <div class="pf-content">
+          <div class="pf-wanted">反对过度监管，保护 AI 和芯片技术免受窃取</div>
+          <div class="pf-got">授权向中国出口先进芯片以换取 25% 收益分成；试图打压 Anthropic</div>
+        </div>
+        <div class="pf-indicator"><svg viewBox="0 0 16 16"><line x1="4" y1="4" x2="12" y2="12"/><line x1="12" y1="4" x2="4" y2="12"/></svg></div>
+      </div>
+      <div class="pf-card">
+        <div class="pf-label">移民政策</div>
+        <div class="pf-content">
+          <div class="pf-wanted">反移民立场与 MAGA 基本盘一致</div>
+          <div class="pf-got">真正掌握权力的是 Stephen Miller——影响力远超 Vance</div>
+        </div>
+        <div class="pf-indicator"><svg viewBox="0 0 16 16"><line x1="4" y1="4" x2="12" y2="12"/><line x1="12" y1="4" x2="4" y2="12"/></svg></div>
+      </div>
+      <div class="pf-card">
+        <div class="pf-label">文化战争</div>
+        <div class="pf-content">
+          <div class="pf-wanted">Vance 最喜欢的主题在行政当局中有所体现</div>
+          <div class="pf-got">Miller 显然拥有更大的权力</div>
+        </div>
+        <div class="pf-indicator"><svg viewBox="0 0 16 16"><line x1="4" y1="4" x2="12" y2="12"/><line x1="12" y1="4" x2="4" y2="12"/></svg></div>
+      </div>
+    </div>
+
+    <div class="narrow-wrap prose rv">
+      <p><strong>外交政策：</strong>Vance 是 MAGA 联盟中的孤立主义一端，拥有连贯的理论体系——美国不能同时在多条战线作战，不应将稀缺弹药消耗在地区冲突上，因为还要应对崛起中的超级大国中国。但讽刺在于，他最担心的场景正在发生：导弹拦截器正以惊人速度消耗在一场中东的 discretionary war 中。在Ukraine问题上，他的盟友 Elbridge Colby 决定暂停对乌武器运输，但 Trump 在数天内就推翻了这个决定，甚至扩大了对Ukraine的支持。在伊朗问题上，他被完全绕过。</p>
+      <p><strong>经济政策：</strong>Vance 想将儿童税收抵免扩大到每个孩子5000美元，想通过扩大工会化、拆分大科技公司、加速反垄断执法来保护美国工人。他推崇"匈牙利式"家庭政策。现实呢？The One Big Beautiful Bill Act（OBBBA）仅将儿童税收抵免提高到2200美元。Atlantic 的评价一针见血："除了关税——那本来也是 Trump 几十年的执念——几乎看不出任何 Vanceism。" <em>[注1]</em></p>
+      <p><strong>AI政策：</strong>2025年Paris AI峰会上，Vance 发表了重要演讲，反对"过度监管 AI"，承诺"保护美国 AI 和芯片技术免受窃取和滥用"。但到了2025年12月，Trump 行政当局授权向中国出口先进芯片以换取25%的收益分成。2026年3月，行政当局还试图打压 Anthropic。Vance 在Paris说过的话，在Washington没人记得。</p>
+      <p><strong>移民政策：</strong>虽然 Vance 在竞选期间的反移民立场与 MAGA 基本盘一致，但 Atlantic 指出，在这个领域真正掌握权力的是 Stephen Miller——他的影响力远超 Vance。</p>
+      <p><strong>文化战争：</strong>一些 Vance 最喜欢的主题在行政当局中有所体现，但 Atlantic 的判断很明确：Miller 显然拥有更大的权力。</p>
+    </div>
+
+    <!-- 第三条线索 -->
+    <div class="narrow-wrap prose rv">
+      <h3 class="sub-heading">第三条线索：Signal 聊天泄露中的"迅速顺从"</h3>
+      <p>Kahloon 获得了一份意外泄露的 Signal 聊天记录。在这份记录中，Vance 曾在私人通信中表达了对打击胡塞武装的反对意见，称其为"错误"。但这个反对意见被否决后——Atlantic 用了一个精准的词——他"acquiesced"（迅速顺从了）。<em>[注1]</em></p>
+      <p>这不是一个政治家的正常行为模式。正常的行为模式是：你在内部反对，如果被否决，你可以在公开场合保持沉默，或者以某种方式表达保留意见。但 Vance 的模式是：内部反对，外部全面辩护。</p>
+      <p>这种"内部反对 - 外部全面辩护"的模式不仅出现在胡塞武装问题上，也出现在伊朗战争的整个过程中。POLITICO 3月13日的报道援引两位匿名白宫高级官员的消息，其中一位描述了 Vance 的角色："他的角色是向总统和行政当局提供……从许多不同角度可能发生的情况的所有观点……但一旦做出决定，他完全支持。" <em>[注2]</em> 另一位则更加直接："Vance 在 Trump 决定发动战争之前，对美国打击伊朗持怀疑态度。" <em>[注2]</em></p>
+      <p>"持怀疑态度"和"完全支持"之间的切换速度之快，令人眩晕。</p>
+    </div>
+
+    <!-- 第四条线索 -->
+    <div class="narrow-wrap prose rv">
+      <h3 class="sub-heading">第四条线索：盟友的被迫出局</h3>
+      <p>Atlantic 文章揭示了两个人事冲突，它们比任何政策分歧都更清晰地展示了 Vance 权力的衰减。</p>
+      <p>Gail Slater，Vance 的前政策顾问，在司法部反垄断执法负责人位置上被司法部长 Pam Bondi 逼迫下台。她的副手 Roger Alford 在去年被赶走时更加直白，称"MAGA-in-Name-Only lobbyists"正在追求"enrich themselves"。<em>[注1]</em></p>
+      <p>这些人不是 Vance 的泛泛之交。Slater 是他从参议员时代就开始合作的反垄断政策核心人物。Alford 的指控直接指向了 MAGA 运动的腐败——而这个运动正是 Vance 声称要改造的对象。</p>
+    </div>
+
+    <!-- 第五条线索 -->
+    <div class="narrow-wrap prose rv">
+      <h3 class="sub-heading">第五条线索：Elbridge Colby 的覆灭</h3>
+      <p>Elbridge Colby，五角大楼最高政策官员，是 Vance 在国防政策领域的核心盟友。2025年夏季，Colby 成功做出了一个 Vance 一定会赞同的决定：暂停对Ukraine的武器运输。但 Trump 在数天内就推翻了这个决定。</p>
+      <p>Atlantic 用这个故事来展示 Vance 式路线在整个行政当局中的溃败——不只是他的个人影响力在消退，而是他所代表的那个思想派系正在被系统性地清除。</p>
+    </div>
+
+    <!-- Kahloon 结论 -->
+    <div class="narrow-wrap prose rv">
+      <h3 class="sub-heading">Kahloon 的结论：身份的牢笼</h3>
+      <p>Atlantic 文章的结尾段值得完整引用：</p>
+    </div>
+
+    <div class="narrow-wrap rv">
+      <div class="blockquote-vance"><p>"Vance came to public attention as a resounding critic of Trump who could nonetheless explain his appeal among heartland Americans to coastal elites. [...] Reinvention is obviously possible for a man who has reinvented himself before. But if he seeks the Republican nomination for president in 2028, he may find himself bound to an unpopular series of policies that the 2024 version of Vance would oppose."</p><p style="font-size:0.72rem;color:var(--text-light-dim);font-style:normal;margin-top:0;">（「Vance 作为一个响亮的 Trump 批评者进入公众视野，但他却能向沿海精英解释 Trump 在心脏地带美国人中的吸引力。[……] 重塑对一个曾经重塑过自己的人来说显然是可能的。但如果他寻求 2028 年共和党总统提名，他可能会发现自己被绑定在一系列 2024 年的 Vance 会反对的不受欢迎的政策上。」）</p><div class="bq-src">Idrees Kahloon, The Atlantic, March 5, 2026 [注1]</div></div>
+    </div>
+
+    <div class="narrow-wrap prose rv">
+      <p>这回到了我们在第三章讨论的那个核心概念：身份的可塑性。Vance 的每一次转身都曾被视为灵活性的体现，但在白宫中，这种可塑性变成了牢笼——他已经为自己塑造了太多层身份，以至于当需要做出一个真实的选择时，他已经不知道哪一层才是真的。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Section 三: Vance vs Rubio -->
+<section class="section-pad sec-dark-alt">
+  <div class="wide-wrap rv">
+    <div class="sec-num">Section III</div>
+    <h2 class="sec-heading">Vance vs Rubio：两个版本的忠诚</h2>
+    <div class="narrow-wrap prose">
+      <p>如果说 Atlantic 的文章是从内部解剖了 Vance 的权力衰退，那么New York杂志 Ed Kilgore 的分析则提供了一个外部视角：通过 Vance 和 Marco Rubio 的对比，揭示了两条完全不同的政治路线。<em>[注3]</em></p>
+      <p>Kilgore 引用了 Jonathan V. Last 的观察，这是理解 Vance 权力基础的关键：</p>
+    </div>
+
+    <div class="narrow-wrap rv">
+      <div class="blockquote-vance"><p>"His base of power isn't Republican voters, but Republican elites. He's spent his entire adult life currying favor with more powerful patrons — progressing from Amy Chua, to David Frum, to Peter Thiel, to Tucker Carlson, and finally to Donald Trump's children."</p><p style="font-size:0.72rem;color:var(--text-light-dim);font-style:normal;margin-top:0;">（「他的权力基础不是共和党选民，而是共和党精英。他整个成年生涯都在讨好更有权势的庇护者——从 Amy Chua，到 David Frum，到 Peter Thiel，到 Tucker Carlson，最后是 Trump 的子女。」）</p><div class="bq-src">Jonathan V. Last, via NY Magazine [注3]</div></div>
+    </div>
+
+    <div class="narrow-wrap rv">
+      <div class="blockquote-vance"><p>"Instead of making himself popular with voters, Vance chose to work the inside game. He targeted people with enough juice to give him the prizes he wanted."</p><p style="font-size:0.72rem;color:var(--text-light-dim);font-style:normal;margin-top:0;">（「Vance 没有选择让自己在选民中受欢迎，而是选择了走内部路线。他瞄准的是那些有足够影响力能给他想要的东西的人。」）</p><div class="bq-src">Jonathan V. Last, via NY Magazine [注3]</div></div>
+    </div>
+
+    <div class="narrow-wrap prose rv">
+      <p>这段话解释了 Vance 在伊朗战争中的行为模式。他不是一个用民意来影响决策的副总统——他是一个用"庇护者关系"来获取权力的副总统。当庇护者之间的利益发生冲突时，他没有民意可以依靠。</p>
+      <p>而 Rubio 走的是完全不同的路。从2016年被 Trump 辱骂为"Lil' Marco"，到2026年成为国务卿兼国家安全顾问，Rubio 始终在共和党建制内运作。他拥有 Vance 缺乏的东西：一个独立于 Trump 的选民基础（Florida的古巴裔社区、保守派福音派、国防鹰派），以及在国会山长期积累的人脉关系。</p>
+      <p>这两个人的对比，在三个关键时刻被推向了极致。</p>
+    </div>
+
+    <!-- Placeholder for NY Magazine image -->
+    <div class="wide-wrap inline-img rv" style="margin-top:clamp(1.5rem,3vw,2.5rem);">
+      <img src="assets/iran-war-04-nymag-vance.jpg" alt="NY Magazine Vance portrait">
+      <div class="cap">NY Magazine 封面：Vance 在白宫中被系统性地边缘化。</div>
+    </div>
+
+    <!-- POWER COMPARISON -->
+    <div class="power-comp rv">
+      <div class="power-col">
+        <div class="pc-name">J.D. Vance</div>
+        <div class="pc-role">Vice President of the United States</div>
+        <div class="pc-item">
+          <div class="pc-cat">选民基础</div>
+          <div class="pc-val"><strong>无独立基础</strong> — 依赖 Trump 转移的 MAGA 忠诚度；"庇护者关系"驱动的精英路线</div>
+        </div>
+        <div class="pc-item">
+          <div class="pc-cat">庇护者</div>
+          <div class="pc-val">Peter Thiel, Tucker Carlson, Trump 家族 — 精英庇护链</div>
+        </div>
+        <div class="pc-item">
+          <div class="pc-cat">战争角色</div>
+          <div class="pc-val">被排除于 Mar-a-Lago 决策圈；战情室"二楼"旁听；事后"辩护者"</div>
+        </div>
+        <div class="pc-item">
+          <div class="pc-cat">媒体曝光</div>
+          <div class="pc-val">被指派领导"反欺诈战争"（War on Fraud）——行政任务</div>
+        </div>
+        <div class="pc-item">
+          <div class="pc-cat">2028 前景</div>
+          <div class="pc-val"><strong>受困</strong> — 被绑定在 2024 版 Vance 会反对的不受欢迎的政策上</div>
+        </div>
+      </div>
+      <div class="power-col">
+        <div class="pc-name">Marco Rubio</div>
+        <div class="pc-role">Secretary of State & National Security Advisor</div>
+        <div class="pc-item">
+          <div class="pc-cat">选民基础</div>
+          <div class="pc-val"><strong>独立基础</strong> — Florida 古巴裔社区、保守派福音派、国防鹰派</div>
+        </div>
+        <div class="pc-item">
+          <div class="pc-cat">权力来源</div>
+          <div class="pc-val">国会山长期人脉 + 建制内运作 — 2016 "Lil' Marco" 到 2026 国务卿</div>
+        </div>
+        <div class="pc-item">
+          <div class="pc-cat">战争角色</div>
+          <div class="pc-val">Mar-a-Lago 战情室核心；Trump 身旁监控轰炸；全球媒体曝光</div>
+        </div>
+        <div class="pc-item">
+          <div class="pc-cat">媒体曝光</div>
+          <div class="pc-val">联合国演讲、国会听证、电视专访 — 国务卿级别</div>
+        </div>
+        <div class="pc-item">
+          <div class="pc-cat">2028 前景</div>
+          <div class="pc-val"><strong>崛起</strong> — 预测市场已反超 Vance；"Draft Rubio"运动兴起</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="narrow-wrap prose rv">
+      <h3 class="sub-heading">委内瑞拉行动：鹰派 vs 事后合理化</h3>
+      <p>2026年初的委内瑞拉行动中，Rubio 是主导者。作为国务卿，他在整个行动的策划和执行中扮演核心角色——从情报收集到外交协调到军事部署。Vance 的角色是什么？是事后的"辩护者"。他将这场军事行动包装为"执法行动"，一个听起来不那么像战争的说辞。</p>
+      <p>鹰派设计战争，鸽派为战争辩护——这个角色分配本身就是一种屈辱。它不是 Vance 选择了这个角色，而是这是他被允许扮演的唯一角色。</p>
+    </div>
+
+    <div class="narrow-wrap prose rv">
+      <h3 class="sub-heading">伊朗战争：缺席的鸽派 vs 聚光灯下的鹰派</h3>
+      <p>在伊朗战争中，这种对比更加尖锐。Rubio 在 Mar-a-Lago 的战情室里，站在 Trump 身旁，监控着每一波轰炸。Vance 在Washington的二楼，手里握着 Diet Mountain Dew，通过视频会议旁听。</p>
+      <p>战争爆发后，Rubio 作为国务卿在全球范围内获得了巨大的媒体曝光——联合国演讲、国会听证、电视专访。Vance 呢？他被指派领导"反欺诈战争"（War on Fraud）——一个听起来像行政任务而非国家战略的角色。</p>
+    </div>
+
+    <div class="narrow-wrap rv">
+      <div class="blockquote-vance"><p>"不需要 Vance 向 MAGA 基本盘推销战争——他们已经因 Trump 的声明而 gung-ho。不需要 VP 欢呼——Trump 的所有媒体出口都在高强度鼓吹战争。"</p><div class="bq-src">Ed Kilgore, NY Magazine / Intelligencer [注3]</div></div>
+    </div>
+
+    <div class="narrow-wrap prose rv">
+      <p>Vance 的主要角色被定义为"在社交媒体上保护 Trump 的 MAGA 侧翼"。但连这个角色都变得多余了——因为 Trump 本身就是 MAGA 侧翼的最大保护者。</p>
+    </div>
+
+    <div class="narrow-wrap prose rv">
+      <h3 class="sub-heading">Munich的传承</h3>
+      <p>第五章我们讨论了Munich安全会议——Vance 2025年的演讲震动欧洲，一年后 Rubio 接棒出席，而 Vance 的肖像在会场被植物巧妙地遮挡。这不是巧合，这是一个象征性的权力交接。演讲者是 Vance，执行者是 Rubio。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Section 四: MAGA 阵营的裂痕 -->
+<section class="section-pad sec-dark">
+  <div class="wide-wrap rv">
+    <div class="sec-num">Section IV</div>
+    <h2 class="sec-heading">MAGA 阵营的裂痕</h2>
+    <div class="narrow-wrap prose">
+      <p>伊朗战争暴露的不只是 Vance 的问题——它暴露了整个 MAGA "美国优先" 意识形态的内在矛盾。</p>
+      <p>Trump 在2016年以反战候选人身份上台，在2024年以反战承诺连任。竞选期间的口号——"不再有战争，结束这些愚蠢、毫无意义的战争"——曾是 MAGA 运动最核心的承诺之一。而当炸弹落下时，这个承诺碎裂的声音在 MAGA 阵营内部产生了回响。</p>
+    </div>
+
+    <!-- WAR SUPPORT STATS STRIP -->
+    <div class="data-strip rv">
+      <div class="data-card">
+        <div class="dc-val">41%</div>
+        <div class="dc-label">选民支持战争</div>
+        <div class="dc-sub">二战以来最低</div>
+      </div>
+      <div class="data-card">
+        <div class="dc-val">23%</div>
+        <div class="dc-label">共和党人反对</div>
+        <div class="dc-sub">近四分之一铁票仓</div>
+      </div>
+      <div class="data-card">
+        <div class="dc-val">200+</div>
+        <div class="dc-label">美军受伤</div>
+        <div class="dc-sub">持续上升中</div>
+      </div>
+      <div class="data-card">
+        <div class="dc-val">13+</div>
+        <div class="dc-label">美军阵亡</div>
+        <div class="dc-sub">每一个数字后面是一个家庭</div>
+      </div>
+    </div>
+
+    <div class="narrow-wrap prose rv">
+      <h3 class="sub-heading">核心人物的叛逃</h3>
+      <p>Joe Rogan 在3月10日的播客中说："人们感到被背叛"，竞选承诺是"不再有战争，结束这些愚蠢、毫无意义的战争"。Rogan 不是随便什么人——他是2024年大选期间 Vance 最关键的媒体盟友之一，他的播客是 Vance 接触独立选民和年轻选民的主要渠道。当 Rogan 说"背叛"这个词时，它对 Vance 的伤害远超过任何主流媒体的批评。<em>[注4]</em></p>
+      <p>Tucker Carlson，Vance 最亲密的意识形态盟友之一，在 ABC News 采访中称战争是"邪恶的"。David Sacks，Vance 的亲密盟友、白宫 AI 沙皇，说美国应该"宣布胜利并离开"伊朗。<em>[注4]</em></p>
+      <p>这些声音构成了一个令人不安的合唱团：Vance 最重要的意识形态盟友几乎全部站在了战争的对立面。</p>
+      <p>而那些站在战争一方的人呢？</p>
+      <p>Laura Loomer，右翼影响者，在社交媒体上呼吁 Vance 谴责 Tucker Carlson，否则"Marco 将成为提名人"。这个威胁直指 Vance 的政治命门：如果你不与 Trump 的战争站在一起，donors 就会去找 Rubio。<em>[注4]</em></p>
+    </div>
+
+    <!-- REACTION GRID -->
+    <div class="reaction-grid rv">
+      <div class="reaction-card">
+        <div class="rc-who">Joe Rogan</div>
+        <div class="rc-role">Podcast Host / Vance 关键媒体盟友</div>
+        <div class="rc-quote">"人们感到被背叛" — 竞选承诺是"不再有战争，结束这些愚蠢、毫无意义的战争"</div>
+      </div>
+      <div class="reaction-card">
+        <div class="rc-who">Tucker Carlson</div>
+        <div class="rc-role">Vance 最亲密的意识形态盟友</div>
+        <div class="rc-quote">在 ABC News 采访中称战争是"邪恶的"</div>
+      </div>
+      <div class="reaction-card">
+        <div class="rc-who">David Sacks</div>
+        <div class="rc-role">白宫 AI 沙皇 / Vance 亲密盟友</div>
+        <div class="rc-quote">美国应该"宣布胜利并离开"伊朗</div>
+      </div>
+      <div class="reaction-card">
+        <div class="rc-who">Laura Loomer</div>
+        <div class="rc-role">右翼影响者</div>
+        <div class="rc-quote">"谴责 Tucker Carlson，否则 Marco 将成为提名人"</div>
+      </div>
+    </div>
+
+    <div class="narrow-wrap prose rv">
+      <h3 class="sub-heading">官员辞职</h3>
+      <p>Joe Kent，国家反恐中心主任，因抗议伊朗战争于3月11日辞职。Kent 不是普通官员——他是 MAGA 运动的忠实信徒，曾在2022年挑战Washington州众议员 Jaime Herrera Beutler（她因投票弹劾 Trump 而受到关注）。当一个 MAGA 核心官员因反战辞职时，这场战争在 MAGA 阵营内部引发的裂痕已经无法掩饰。<em>[注4]</em></p>
+    </div>
+
+    <div class="narrow-wrap prose rv">
+      <h3 class="sub-heading">民调的警告信号</h3>
+      <p>数字讲述了故事。</p>
+      <p>41%的选民支持美国对伊朗的战争——这是自二战以来美国主要军事干预中获得的支持率最低的一次。<em>[注5]</em> 77%的共和党人支持打击伊朗，这个数字看起来令人放心，但它的反面是：23%的共和党人——近四分之一的选民——不支持。在 MAGA 的铁票仓里，这23%不是可以忽略的误差，而是可能决定初选的选票。</p>
+      <p>200名美军士兵受伤，至少13名美军死亡。<em>[注5]</em> 每一个数字后面都是一个家庭，而每一个家庭都可能成为MAGA反战叙事的载体。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Placeholder photos: Trump-Vance, Vance Air Force Two, Vance Dover salute, Vance Joint Base -->
+<div class="photo-break rv">
+  <img src="assets/vance-iraq-politico.jpg" alt="Vance in military context">
+  <div class="cap">Vance 与军事相关的公开活动照片。</div>
+</div>
+
+<!-- Section 五: 社交媒体上的裂变 -->
+<section class="section-pad sec-dark-alt">
+  <div class="wide-wrap rv">
+    <div class="sec-num">Section V</div>
+    <h2 class="sec-heading">社交媒体上的裂变</h2>
+    <div class="narrow-wrap prose">
+      <p>社交媒体数据为这个叙事提供了底层的量化证据。在我们分析的全部219条社交媒体讨论中，伊朗战争议题是 Vance 在社交媒体上<strong>最脆弱的领域</strong>——无论在 Twitter 还是 Reddit 上，反对声都是最强的。<em>[注6]</em></p>
+    </div>
+
+    <!-- SENTIMENT BAR CHART -->
+    <div class="sentiment-chart rv">
+      <div class="sentiment-group">
+        <div class="s-label">Munich 演讲<span class="s-sub">跨大西洋议题</span></div>
+        <div class="s-bar-wrap">
+          <div class="s-bar-row">
+            <div class="s-bar-label">Support</div>
+            <div class="s-bar-track"><div class="s-bar-fill support" style="width:80%;"></div></div>
+            <div class="s-bar-val">12</div>
+          </div>
+          <div class="s-bar-row">
+            <div class="s-bar-label">Oppose</div>
+            <div class="s-bar-track"><div class="s-bar-fill oppose" style="width:20%;"></div></div>
+            <div class="s-bar-val">3</div>
+          </div>
+        </div>
+      </div>
+      <div class="sentiment-group">
+        <div class="s-label">2028 前景<span class="s-sub">政治前景议题</span></div>
+        <div class="s-bar-wrap">
+          <div class="s-bar-row">
+            <div class="s-bar-label">Support</div>
+            <div class="s-bar-track"><div class="s-bar-fill support" style="width:82%;"></div></div>
+            <div class="s-bar-val">9</div>
+          </div>
+          <div class="s-bar-row">
+            <div class="s-bar-label">Oppose</div>
+            <div class="s-bar-track"><div class="s-bar-fill oppose" style="width:18%;"></div></div>
+            <div class="s-bar-val">2</div>
+          </div>
+        </div>
+      </div>
+      <div class="sentiment-group">
+        <div class="s-label">伊朗战争<span class="s-sub">Vance 最脆弱领域</span></div>
+        <div class="s-bar-wrap">
+          <div class="s-bar-row">
+            <div class="s-bar-label">Support</div>
+            <div class="s-bar-track"><div class="s-bar-fill support" style="width:11%;"></div></div>
+            <div class="s-bar-val">1</div>
+          </div>
+          <div class="s-bar-row">
+            <div class="s-bar-label">Oppose</div>
+            <div class="s-bar-track"><div class="s-bar-fill oppose" style="width:89%;"></div></div>
+            <div class="s-bar-val">8</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="narrow-wrap prose rv">
+      <h3 class="sub-heading">"我不想坐牢"</h3>
+      <p>Twitter 上获得最多互动的伊朗战争相关推文来自 @allenAnalysis（44,035 likes），内容是 Vance 被问及"战争前给 Trump 什么建议"时回答的视频："I don't want to go to prison."<em>[注7]</em></p>
+      <p>这句话之所以成为病毒式传播素材，不是因为它特别出格——而是因为它用最简洁的语言概括了 Vance 的困境。一个反战者被问到为什么支持战争，他的回答不是关于国家利益、不是关于地缘战略、不是关于民主对抗暴政——而是关于他自己。关于他个人可能面临的后果。这把一个应该宏大的外交政策问题，缩小成了一个个人的生存问题。</p>
+      <p>Jackson Hinkle 的推文（7,990 likes）用了一个更简单的框架："Iraq war 2.0"。<em>[注8]</em> 这个类比的力量在于它的即时性——不需要任何解释，任何对2003年伊拉克战争有记忆的人都会在瞬间理解它的含义：情报可能是假的，战争可能是错误的，后果可能是灾难性的。</p>
+    </div>
+
+    <div class="narrow-wrap prose rv">
+      <h3 class="sub-heading">Reddit 上的民间愤怒</h3>
+      <p>Reddit 上的数据更加令人不安。r/MurderedByWords 上关于 Vance 的帖子获得了 49,464 分（这个 subreddit 上的最高分），标题是"He learned it from his boss too!"——指的是 Vance 的虚伪，曾经反战，现在支持战争，效仿 Trump 的行为模式。<em>[注6]</em></p>
+      <p>r/NewsSource 上一个关于"Vance 的市政厅会议因不受欢迎的伊朗战争被无限期推迟"的帖子获得了 3,324 分和76条评论。<em>[注6]</em> 这条新闻在主流媒体中几乎没有被注意到——但它揭示了战争对 Vance 的日常政治活动的具体影响。他连公开活动都难以举行了。</p>
+      <p>r/BoomersBeingFools 上的帖子（1,457分）直接将 Vance 的引语并列放置：一边是"我们不想与伊朗开战"的竞选承诺，一边是"但我们想要和平，前提是他们没有核武计划"的战争辩护。<em>[注6]</em> 这种"前后对比"的手法在社交媒体上极其有效，因为它让虚伪变得可视化。</p>
+    </div>
+
+    <div class="narrow-wrap prose rv">
+      <h3 class="sub-heading">Twitter 上的异常：反对推文数量</h3>
+      <p>跨议题的数据对比揭示了一个重要模式：在Munich演讲议题上，Twitter 上支持与反对的比例是12:3；在2028前景上，比例是9:2；但在伊朗战争议题上，比例是1:8。<em>[注6]</em> 这意味着即使在 MAGA 主导的 Twitter 生态中，伊朗战争引发的反对声也是压倒性的。</p>
+      <p>即使那些"支持" Vance 的推文，也多为"防卫性"支持——不是主动赞美他的立场，而是反驳记者的提问。这暗示了一个更深层的问题：Vance 的支持者在这场战争中找不到一个值得赞美的理由，他们能做的只是阻止批评。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Placeholder: Trump-Vance photo -->
+<div class="wide-wrap inline-img rv" style="padding:0 var(--pad);">
+  <img src="assets/mar-a-lago-war-room-01.jpg" alt="Trump at Mar-a-Lago situation room during Iran strikes">
+  <div class="cap">白宫官方照片：Trump 在 Mar-a-Lago 战情室指挥伊朗打击行动。</div>
+</div>
+
+<!-- Section 六: Trump 的公开羞辱 -->
+<section class="section-pad sec-light">
+  <div class="wide-wrap rv">
+    <div class="sec-num">Section VI</div>
+    <h2 class="sec-heading">Trump 的公开羞辱</h2>
+    <div class="narrow-wrap prose">
+      <p>3月9日，Trump 在新闻发布会上做了一件在历史上极为罕见的事情：他公开承认自己的副总统与自己意见不一致。</p>
+      <p>Trump 说 Vance 对战争"philosophically a little bit different"，"不那么热情"。<em>[注9]</em></p>
+      <p>这句话表面上是温和的——"philosophically different"听起来像是在尊重不同意见。但它的实际效果是毁灭性的。当美国总统公开说他的副总统在一场正在进行的战争中与他"philosophically different"时，他实际上是在告诉全世界：这个副总统不在决策圈子里。</p>
+      <p>历史上，总统公开承认与副总统意见分歧是极其罕见的。总统和副总统的分歧通常在闭门会议中解决——因为公开暴露这种分歧会削弱行政当局的团结，也会削弱副总统在国际外交中的可信度。Trump 选择公开暴露这个分歧，要么是他真的不在乎 Vance 的面子，要么是他有意在传递一个信号。</p>
+    </div>
+
+    <div class="narrow-wrap prose rv">
+      <p>Vance 的反应揭示了更深层的困境。3月13日，他对媒体说："我认为美国总统能够与他的团队进行对话，而他的团队不会跑到美国媒体面前说三道四，这很重要。"<em>[注2]</em> 这句话听起来像是在批评泄密的官员，但它的潜台词更值得玩味——他在要求的是一个他不曾拥有的东西：被认真对待。</p>
+      <p>3月16日，Vance 公开支持 Trump 的伊朗战争决定，称媒体试图在他们之间制造裂痕。3月18日，他在Michigan州发表罕见直接评论，称 Trump 不会陷入长期冲突。<em>[注10]</em> 从"异常安静"到"公开辩护"，这个转变只用了不到两周。但转变的速度本身就是问题——它再次印证了 Atlantic 文章中"acquiesced"的判断。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Section 七: 边缘化的结构 -->
+<section class="section-pad sec-dark">
+  <div class="wide-wrap rv">
+    <div class="sec-num">Section VII</div>
+    <h2 class="sec-heading">边缘化的结构</h2>
+    <div class="narrow-wrap prose">
+      <p>Washington邮报在2026年1月——战争爆发前一个月——还发表了一篇评论文章，称 Vance 是"该职位最有权力的占据者"，说他"超越了副总统 Dick Cheney 在 George W. Bush 任期内的整体影响力"。<em>[注11]</em></p>
+      <p>一个月后，这个"最有权力的副总统"被排除在战争决策圈之外，坐在战情室的二楼，喝着 Diet Mountain Dew。</p>
+      <p>这种权力的急剧衰退不是偶然的——它有一个清晰的结构。</p>
+    </div>
+
+    <!-- Placeholder: Vance at Joint Base Andrews -->
+    <div class="wide-wrap inline-img rv" style="margin-top:clamp(1.5rem,3vw,2.5rem);">
+      <img src="assets/iran-war-08-joint-base.jpg" alt="Vance boarding Air Force Two at Joint Base Andrews">
+      <div class="cap">Vance 在 Joint Base Andrews 登上空军二号。Mar 9, 2026。AP Photo。</div>
+    </div>
+
+    <!-- REACTION GRID -->
+    <div class="reaction-grid rv">
+      <div class="reaction-card">
+        <div class="rc-who">Curt Mills</div>
+        <div class="rc-role">The American Conservative 执行主任</div>
+        <div class="rc-quote">"可能是美国历史上最大的竞选背叛之一。"</div>
+      </div>
+      <div class="reaction-card">
+        <div class="rc-who">Emma Ashford</div>
+        <div class="rc-role">Stimson Center 高级研究员</div>
+        <div class="rc-quote">如果 Trump 把 Vance 拖入伊朗战争，"他将很难回来说'我从不相信这一切'"。</div>
+      </div>
+      <div class="reaction-card">
+        <div class="rc-who">John Bolton</div>
+        <div class="rc-role">前国家安全顾问（与 Vance 意识形态完全相反）</div>
+        <div class="rc-quote">"每一天对他来说都是真正的问题。"</div>
+      </div>
+      <div class="reaction-card">
+        <div class="rc-who">Sam Rosenfeld</div>
+        <div class="rc-role">Colgate 大学</div>
+        <div class="rc-quote">Vance 的身份是"MAGA 的知识分子"，有真正的信念，被绑定在 Trump 身边是有风险的。</div>
+      </div>
+      <div class="reaction-card">
+        <div class="rc-who">Brandon Weichert</div>
+        <div class="rc-role">LindellTV</div>
+        <div class="rc-quote">"本应是 MAGA 运动不干预主义派的先驱，但他有点……被边缘化了"。他在"kid's table"——感恩节晚餐上小孩子坐的那张桌子。</div>
+      </div>
+    </div>
+
+    <div class="narrow-wrap prose rv">
+      <p>Colgate 大学的 Sam Rosenfeld 提供了一个更深层的诊断：Vance 的身份是"MAGA 的知识分子"，有真正的信念，被绑定在 Trump 身边是有风险的。<em>[注5]</em> "知识分子"这个词在 MAGA 运动中本身就是矛盾的——MAGA 的核心修辞是反知识分子、反精英、反建制。当一个"知识分子"被绑定在一个反知识分子的运动上，他的信念和忠诚之间的张力就是不可避免的。</p>
+      <p>LindellTV 的 Brandon Weichert 用一个生动的比喻概括了 Vance 的处境："本应是 MAGA 运动不干预主义派的先驱，但他有点……被边缘化了"，说他在"kid's table"（儿童桌）——感恩节晚餐上小孩子坐的那张桌子。<em>[注5]</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- Section 八: 无解的困局 -->
+<section class="section-pad sec-light">
+  <div class="wide-wrap rv">
+    <div class="sec-num">Section VIII</div>
+    <h2 class="sec-heading">无解的困局</h2>
+    <div class="narrow-wrap prose">
+      <p>Vance 的困境可以简化为一个二元选择：支持 Trump 的战争决策 -&gt; 失去反战 MAGA 基本盘；反对 -&gt; 得罪 Trump，失去通往2028提名的门票。</p>
+      <p>但这不是一个真正的二元选择——因为两个选项都通向同一个终点。</p>
+      <p>如果他选择支持战争——正如他已经做的——他会失去 MAGA 阵营中那些真正相信"美国优先"和反干预主义的人。这些人不会转向民主党，但他们可能在2028年初选中待在家里，或者转向 Rubio（他在战争中的鹰派立场反而更一致）。</p>
+      <p>如果他选择反对战争——正如他在内部曾经做的——他会得罪 Trump，而 Trump 是共和党提名过程中唯一的仲裁者。没有 Trump 的背书，Vance 在2028年的初选中几乎没有任何胜算。</p>
+      <p>这就是"习得性无助"在政治层面的终极体现。Vance 曾经相信自己可以通过思想来影响决策——他的反干预主义理论，他的"后自由主义"保守主义，他的"美国利益"外交政策框架。但当真正的考验来临时，他发现自己在决策桌上没有座位。</p>
+      <p>这与Munich演讲的矛盾是同一条线索的延续。在Munich，Vance 说"威胁来自内部"——美国不应该干预外部事务。这句话的前提是他相信自己在行政当局内部有能力塑造政策方向。但Munich之后发生的一切——Paris AI峰会与硅谷议程的合流、Rubio 接棒Munich、Vance 肖像被植物遮挡——已经暗示了他的影响力正在消退。伊朗战争只是最终确认了这个趋势。</p>
+    </div>
+
+    <div class="narrow-wrap rv">
+      <div class="blockquote-vance"><p>"任何 Trump 副总统都离被抛弃只有一步之遥。" Mike Pence 忠心耿耿直到被要求违法，然后被边缘化。Vance 忠心耿耿直到被要求为一场他反对的战争辩护——然后呢？</p><div class="bq-src">Ed Kilgore, NY Magazine [注3]</div></div>
+    </div>
+
+    <div class="narrow-wrap prose rv">
+      <p>White House 发言人 Anna Kelly 的否认声明只让事情变得更糟："试图在 Trump 总统和 Vance 副总统之间制造裂痕的努力完全是误导性的。总统倾听来自他才华横溢的国家安全团队的各种意见……" <em>[注2]</em> 如果总统真的"倾听各种意见"，为什么 Vance 被排除在 Mar-a-Lago 的核心决策圈之外？如果 Vance 是总统的"巨大资产"，为什么他会在战情室的"二楼"而不是主桌？</p>
+      <p>Vance 发言人 Taylor Van Kirk 的回应则更加暴露了问题："副总统一直是左右两边不断泄密的对象，人们试图将自己的观点投射到他身上……副总统是总统国家安全团队的自豪成员，他对总统的建言保持私密。"<em>[注2]</em> "建言保持私密"——但 Atlantic 的 Signal 聊天泄露已经证明，Vance 的"私密建言"在被否决后"迅速顺从"。私密建言的价值不在于它的存在，而在于它是否影响了决策。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Section 九: 筹款 -->
+<section class="section-pad sec-dark-alt">
+  <div class="wide-wrap rv">
+    <div class="sec-num">Section IX</div>
+    <h2 class="sec-heading">筹款：唯一能做的事</h2>
+    <div class="narrow-wrap prose">
+      <p>当 Vance 无法影响战争时，他能做什么？</p>
+      <p>答案是筹款。2026年3月12日，就在 NY Magazine 发表他那篇尖锐分析的同一天，Axios 报道 Vance 将在 Joe Lonsdale 的 Austin 宅邸出席筹款晚宴。入场费50,000美元一人，100,000美元一对。参与者包括 JPMorgan Chase、Gemini、Crypto.com 等金融和加密货币领域的大金主。<em>[注12]</em></p>
+    </div>
+
+    <!-- Placeholder: Turning Point USA -->
+    <div class="wide-wrap inline-img rv" style="margin-top:clamp(1.5rem,3vw,2.5rem);">
+      <img src="assets/vance-power-01-turning-point.jpg" alt="Vance speaks at Turning Point USA AmericaFest">
+      <div class="cap">Vance 在 Turning Point USA 的 AmericaFest 大会上发表演讲。Dec 2025。Reuters。</div>
+    </div>
+
+    <!-- Placeholder: White House briefing room -->
+    <div class="wide-wrap inline-img rv" style="margin-top:clamp(1rem,2vw,1.5rem);">
+      <img src="assets/vance-power-02-wh-briefing.jpg" alt="Vance at White House press briefing">
+      <div class="cap">Vance 在白宫新闻简报室发言。Jan 8, 2026。UPI。</div>
+    </div>
+
+    <div class="narrow-wrap prose rv">
+      <p>Common Dreams 的批评直指核心："JD Vance has a lot of nerve showing up in Texas to shake down wealthy donors... while Texans are paying through the nose at the pump."<em>[注12]</em></p>
+      <p>这个场景是对 Vance 当前处境的终极讽刺。他的选民因为油价飙升而痛苦——油价飙升的直接原因是他反对的那场战争——而他在Texas州的亿万富翁家中以五万美元一位的价格出售晚餐入场券。</p>
+      <p>这不是一个反干预主义者的行为。这是一个2028总统候选人的行为。而这两个身份之间的张力，正是 Vance 伊朗困境的本质。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Section 十: 通往2028 -->
+<section class="section-pad sec-dark">
+  <div class="wide-wrap rv">
+    <div class="sec-num">Section X</div>
+    <h2 class="sec-heading">通往2028</h2>
+    <div class="narrow-wrap prose">
+      <p>Atlantic 文章结尾的警告正在变得越来越具体：Vance 如果寻求2028年共和党提名，"他可能会发现自己被绑定在一系列2024年的 Vance 会反对的不受欢迎的政策上。"<em>[注1]</em></p>
+      <p>伊朗战争让这个问题变得不再是假设。</p>
+      <p>如果战争在短期内结束，Vance 可以勉强过关——他可以说自己的"怀疑态度"被证明是对的（战争确实不必要），同时他的"忠诚"也得到了验证（他公开支持了总统）。但这种叙事需要两个条件同时成立：战争很快结束，且 Trump 允许他这样叙事。</p>
+      <p>如果战争变成泥潭——如果美军伤亡继续上升，如果油价持续高企，如果伊朗的抵抗比预期更顽强——那么 Vance 的处境将急剧恶化。他会被同时指责：被他曾经的基本盘指责为"叛徒"（你承诺过不参战），被建制派指责为"不忠诚"（你在内部反对战争）。Curt Mills 的判断——"对于相信重建党和运动承诺的核心 MAGA 来说，这只是巨大的失望"——会变成一种政治力量。<em>[注5]</em></p>
+      <p>而在这一切的不远处，Marco Rubio 正在以鹰派身份崛起。预测市场中 Rubio 已在大选概率上反超 Vance。donors 中兴起了"Draft Rubio"运动。<em>[注3]</em> Trump 本人也在公开和私下问他的顾问们是更喜欢 Vance 还是 Rubio。</p>
+      <p>从"Lil' Marco"到可能的2028年共和党提名人——Rubio 走过了一条 Vance 没走过的路。他在建制内积累权力，他在选民中建立独立基础，他在战争中站在总统身旁而非战情室的二楼。</p>
+      <p>Vance 的2028之路，现在要经过一片他自己承诺过不会存在的战场。</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section-pad sec-dark-alt">
+  <div class="wide-wrap rv">
+    <div class="sec-num">Timeline</div>
+    <h2 class="sec-heading" style="font-size:clamp(1.3rem,2vw,1.6rem);">关键事件时间线</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">Feb 26, 2026</div>
+        <div class="tl-body"><div class="tl-title">Vance 最后一次公开表态</div><div class="tl-desc">接受 Washington 邮报采访，自称"外国军事干预的怀疑者"，"我们都倾向外交选项"。两天后战争爆发。</div></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Feb 28, 2026</div>
+        <div class="tl-body"><div class="tl-title">"史诗之怒"行动启动</div><div class="tl-desc">美以联合轰炸伊朗弹道导弹设施。Vance 被留在 Washington 战情室"二楼"，手握 Diet Mountain Dew，通过视频旁听。Trump、Rubio、Hegseth 在 Mar-a-Lago。</div></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Mar 5, 2026</div>
+        <div class="tl-body"><div class="tl-title">Atlantic 发表"屈辱"长文</div><div class="tl-desc">Idrees Kahloon 五条线索解剖 Vance 的系统性边缘化。Signal 聊天泄露显示"acquiesced"模式。同日，Vance X 账号持续沉默。</div></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Mar 9, 2026</div>
+        <div class="tl-body"><div class="tl-title">Trump 公开与 Vance 拉开距离</div><div class="tl-desc">Trump 称 Vance "philosophically a little bit different"。Vance 前往 Dover 空军基地向阵亡士兵致敬。</div></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Mar 11, 2026</div>
+        <div class="tl-body"><div class="tl-title">MAGA 核心官员辞职</div><div class="tl-desc">国家反恐中心主任 Joe Kent 因抗议伊朗战争辞职。他是 MAGA 运动忠实信徒，曾挑战弹劾 Trump 的众议员。</div></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Mar 12, 2026</div>
+        <div class="tl-body"><div class="tl-title">NY Magazine 分析 + 筹款晚宴</div><div class="tl-desc">Ed Kilgore 发表 Vance vs Rubio 对比分析。同日，Axios 报道 Vance 将在 Joe Lonsdale 的 Austin 宅邸出席 $50K/人筹款晚宴。</div></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Mar 13, 2026</div>
+        <div class="tl-body"><div class="tl-title">POLITICO 报道 Vance "skeptical" 角色</div><div class="tl-desc">两位匿名白宫官员确认 Vance 曾持怀疑态度但最终"完全支持"。Vance 发言人回应"建言保持私密"。</div></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Mar 16, 2026</div>
+        <div class="tl-body"><div class="tl-title">Vance 公开支持 Trump 战争决定</div><div class="tl-desc">称媒体试图制造裂痕。从"异常安静"到"公开辩护"仅两周——"acquiesced" 模式的最终确认。</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING TEASER -->
+<section class="section-pad sec-light">
+  <div class="narrow-wrap prose rv" style="text-align:center;">
+    <p style="font-family:var(--serif);font-size:clamp(1.1rem,1.8vw,1.3rem);font-style:italic;color:var(--text-dark-sec);line-height:1.7;">下一章——终章。当所有面孔都褪去，当七重身份在战火中燃烧殆尽，剩下的那个人是谁？通往2028的路上，Vance 发现自己站在一片他亲手承诺不会存在的战场中央。</p>
+  </div>
+</section>
+
+<!-- SOURCES -->
+<section class="section-pad sec-dark" style="padding-bottom:0;">
+  <div class="wide-wrap rv">
+    <div class="sec-num">Sources</div>
+    <h2 class="sec-heading" style="font-size:clamp(1.3rem,2vw,1.6rem);">来源</h2>
+    <ol class="source-list">
+      <li><strong>[注1]</strong> Idrees Kahloon, "The Humiliation of J.D. Vance," The Atlantic, March 5, 2026. <a href="https://www.theatlantic.com/ideas/2026/03/vance-declining-relevance-iran/686234/" style="color:var(--accent-light);text-decoration:underline;">theatlantic.com</a></li>
+      <li><strong>[注2]</strong> POLITICO, "Vance was 'skeptical' voice in White House on Iran strikes," March 13, 2026; Fox News, "White House dismisses reports Vance distant from Operation Epic Fury"; Vance 发言人 Taylor Van Kirk 声明.</li>
+      <li><strong>[注3]</strong> Ed Kilgore, "Is J.D. Vance Feeling Left Out of Trump's Big New War?" New York Magazine / Intelligencer, March 12, 2026. <a href="https://nymag.com/intelligencer/article/what-does-trump-iran-war-mean-for-jd-vance.html" style="color:var(--accent-light);text-decoration:underline;">nymag.com</a></li>
+      <li><strong>[注4]</strong> MAGA 阵营反应综合：Tucker Carlson (ABC News 采访); Joe Rogan (播客, 3/10); David Sacks (公开声明); Laura Loomer (社交媒体); Joe Kent (辞职声明, 3/11).</li>
+      <li><strong>[注5]</strong> USA TODAY/Yahoo, "'This is a problem.' Iran war puts JD Vance in a bind ahead of 2028," March 14, 2026; 引用 Curt Mills, Emma Ashford, John Bolton, Sam Rosenfeld, Brandon Weichert.</li>
+      <li><strong>[注6]</strong> 社交媒体综合分析（159条Twitter + 60条Reddit = 219条讨论），跨议题情绪对比数据。</li>
+      <li><strong>[注7]</strong> @allenAnalysis (TruthTrumpPost), Twitter, March 15, 2026. "I don't want to go to prison." 视频.</li>
+      <li><strong>[注8]</strong> @jacksonhinklle, Twitter, Feb 26, 2026. "Iraq war 2.0."</li>
+      <li><strong>[注9]</strong> Trump 新闻发布会, March 9, 2026. "Philosophically a little bit different."</li>
+      <li><strong>[注10]</strong> Reuters, "Vance says he trusts Trump on Iran war, plays down differences," March 16, 2026; Forbes, "JD Vance Makes Rare Remark on Iran War," March 18, 2026.</li>
+      <li><strong>[注11]</strong> Washington Post (via The Hill), "JD Vance's battles for 2026 and 2028," by Myra Adams, Jan 9, 2026.</li>
+      <li><strong>[注12]</strong> Axios Austin, "Vance to headline two RNC fundraisers in Texas," March 11, 2026; Common Dreams, 批评报道.</li>
+    </ol>
+  </div>
+</section>
+
+<nav class="ch-nav sec-dark">
+  <a href="munich-shockwave.html" class="ch-nav-link"><div class="label">Previous</div><div class="title">V. Munich震动</div></a>
+  <a href="road-to-the-throne.html" class="ch-nav-link"><div class="label">Next Chapter</div><div class="title">VII. 2028</div></a>
+</nav>
+
+<footer class="foot sec-dark"><div class="wide-wrap"><p>J.D. Vance：七个面孔 &mdash; Chapter VI &mdash; March 2026</p></div></footer>
+
+<script>
+(function(){var els=document.querySelectorAll('.rv');if(!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('vis')});return;}var obs=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('vis');obs.unobserve(entry.target);}});},{threshold:0.06,rootMargin:'0px 0px -40px 0px'});els.forEach(function(el){obs.observe(el);});})();
+(function(){var m=document.querySelector('.masthead');var t=false;window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(function(){m.style.background=window.scrollY>80?'oklch(0.11 0.015 30/0.95)':'oklch(0.11 0.015 30/0.9)';t=false;});t=true;}});})();
+</script>
+</body>
+</html>
