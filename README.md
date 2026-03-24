@@ -12,7 +12,7 @@
 
 ## 在线阅读
 
-访问 [GitHub Pages](#) 阅读完整报告。
+访问 https://kuaner.github.io/jd-vance-report/ 阅读完整报告。
 
 ## 项目结构
 
@@ -59,13 +59,13 @@ jd-vance-report/
 
 | 章 | 标题 | 核心议题 |
 |----|------|---------|
-| I | [铁锈带之子](rust-belt-son.html) | Middletown 童年创伤、海军陆战队、耶鲁法学院——信念内核的形成 |
-| II | [乡下人的悲歌](hillbilly-elegy.html) | 回忆录的商业化成功、300 万册销量、身份叙事与真实之间的裂缝 |
-| III | [蜕变](metamorphosis.html) | 8 条反 Trump 原话的 180 度翻转、Streisand 效应、社交媒体病毒传播 |
-| IV | [硅谷造王者](silicon-valley-kingmakers.html) | Thiel/Sacks/Andreessen/Lonsdale 权力网络、$15M 投资、社交资本变现 |
-| V | [慕尼黑震动](munich-shockwave.html) | MSC 2025 演讲全文逐段分析、欧洲跨大西洋地震、Musk vs Greta 效应 |
-| VI | [伊朗困境](iran-trap.html) | 五大政策领域全面溃败、41% 战争支持率（历史最低）、Vance vs Rubio 权力消长 |
-| VII | [王座之路](road-to-the-throne.html) | 好感度崩塌、预测市场冲击、Draft Rubio 运动、2028 初选格局 |
+| I | [铁锈带之子](https://kuaner.github.io/jd-vance-report/rust-belt-son.html) | Middletown 童年创伤、海军陆战队、耶鲁法学院——信念内核的形成 |
+| II | [乡下人的悲歌](https://kuaner.github.io/jd-vance-report/hillbilly-elegy.html) | 回忆录的商业化成功、300 万册销量、身份叙事与真实之间的裂缝 |
+| III | [蜕变](https://kuaner.github.io/jd-vance-report/metamorphosis.html) | 8 条反 Trump 原话的 180 度翻转、Streisand 效应、社交媒体病毒传播 |
+| IV | [硅谷造王者](https://kuaner.github.io/jd-vance-report/silicon-valley-kingmakers.html) | Thiel/Sacks/Andreessen/Lonsdale 权力网络、$15M 投资、社交资本变现 |
+| V | [慕尼黑震动](https://kuaner.github.io/jd-vance-report/munich-shockwave.html) | MSC 2025 演讲全文逐段分析、欧洲跨大西洋地震、Musk vs Greta 效应 |
+| VI | [伊朗困境](https://kuaner.github.io/jd-vance-report/iran-trap.html) | 五大政策领域全面溃败、41% 战争支持率（历史最低）、Vance vs Rubio 权力消长 |
+| VII | [王座之路](https://kuaner.github.io/jd-vance-report/road-to-the-throne.html) | 好感度崩塌、预测市场冲击、Draft Rubio 运动、2028 初选格局 |
 
 ## 技术实现
 
@@ -167,12 +167,14 @@ jd-vance-report/
 
 ### 图片来源
 
-49 张配图**全部由 Agent 自主完成搜索、筛选和下载**。Agent 通过以下工作流完成配图：
+49 张配图**并非后期单独搜集，而是在调研检索阶段就被 Agent 刻意保留的**。Agent 在浏览新闻网页、Wikimedia Commons、Reddit 帖子等来源收集资料时，同步将发现的配图候选（URL、描述、版权信息）记录到 `image-assets.md` 日志中，按章节和主题分类索引（共 13 个类别、64+ 条来源记录）。当调研稿撰写完成并标注 `[VIS:]` 配图需求后，Agent 直接从已有的图片日志中匹配、筛选和下载，而非重新搜索。
 
-1. **需求分析**：Agent 在撰写每章调研稿时标注 `[VIS:]` 标记，指定配图需求（场景、人物、事件）
-2. **来源搜索**：Agent 使用 wikimedia-image-fetch skill 解析 Wikimedia Commons 页面、通过网络搜索定位新闻摄影、通过社交媒体 URL 提取公开图片
-3. **自动下载**：Agent 通过 curl 批量下载图片到 `assets/` 目录，记录文件名、URL、描述和大小到 `image-download-log.md`
-4. **去重校验**：在可视化阶段 Agent 对比图片实际内容（而非文件名）识别重复，例如发现 `munich-03.jpg` 与 `munich-msc-og.jpg` 为同一场景后自动移除
+完整工作流：
+
+1. **资料检索阶段**：Agent 在调研过程中浏览新闻页面、Wikimedia、社交媒体时，主动识别和记录潜在的配图来源，写入 `image-assets.md`（含 URL、描述、版权状态）
+2. **需求标注**：调研稿撰写时通过 `[VIS:]` 标记指定每章配图需求（场景、人物、事件）
+3. **匹配下载**：Agent 从图片日志中匹配需求，通过 wikimedia-image-fetch skill 解析 Wikimedia 页面、curl 批量下载到 `assets/` 目录，记录到 `image-download-log.md`（含文件名、URL、描述、大小）
+4. **去重校验**：可视化阶段 Agent 对比图片实际内容（而非文件名）识别重复，例如发现 `munich-03.jpg` 与 `munich-msc-og.jpg` 为同一场景后自动移除
 
 图片来源包括：
 - **Wikimedia Commons** — 官方肖像、公共领域照片、MSC 官方 CC BY-SA 授权
