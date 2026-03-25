@@ -153,6 +153,27 @@ img { display: block; max-width: 100%; height: auto; }
   .ch-nav { grid-template-columns: 1fr; }
   .ch-nav-link:first-child { border-right: none; border-bottom: 1px solid var(--border-dark); }
 }
+/* Language Switch */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.lang-switch:hover {
+  border-color: rgba(255,255,255,0.5);
+  color: #fff;
+}
 </style>
 </head>
 <body>
@@ -160,12 +181,13 @@ img { display: block; max-width: 100%; height: auto; }
 <header class="masthead">
   <a href="index.html" class="back"><span>&larr;</span> &nbsp;J.D. Vance：七个面孔</a>
   <div class="ch-tag">Chapter II of VII</div>
+  <a href="../en/hillbilly-elegy.html" class="lang-switch" data-lang="en">EN</a>
 </header>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg">
-    <img src="assets/hillbilly-elegy-netflix-poster.png" alt="Hillbilly Elegy Netflix poster">
+    <img src="../assets/hillbilly-elegy-netflix-poster.png" alt="Hillbilly Elegy Netflix poster">
   </div>
   <div class="hero-content">
     <div class="hero-ch">Chapter II</div>
@@ -191,11 +213,11 @@ img { display: block; max-width: 100%; height: auto; }
   <div class="wide-wrap rv">
     <div class="book-covers">
       <div class="book-cover-cell">
-        <img src="assets/hillbilly-elegy-cover.jpg" alt="Hillbilly Elegy book cover">
+        <img src="../assets/hillbilly-elegy-cover.jpg" alt="Hillbilly Elegy book cover">
         <div class="book-cover-label">HarperCollins, 2016</div>
       </div>
       <div class="book-cover-cell">
-        <img src="assets/hillbilly-elegy-netflix-poster.png" alt="Netflix film poster">
+        <img src="../assets/hillbilly-elegy-netflix-poster.png" alt="Netflix film poster">
         <div class="book-cover-label">Netflix, 2020 — Dir. Ron Howard</div>
       </div>
     </div>

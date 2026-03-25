@@ -103,6 +103,27 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;height:au
 .rv{opacity:0;transform:translateY(20px);transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),transform 0.7s cubic-bezier(0.16,1,0.3,1);}
 .rv.vis{opacity:1;transform:translateY(0);}
 @media(max-width:640px){.social-bar{grid-template-columns:repeat(2,1fr);}.ch-nav{grid-template-columns:1fr;}.ch-nav-link:first-child{border-right:none;border-bottom:1px solid var(--border-dark);}}
+/* Language Switch */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.lang-switch:hover {
+  border-color: rgba(255,255,255,0.5);
+  color: #fff;
+}
 </style>
 </head>
 <body>
@@ -110,10 +131,11 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;height:au
 <header class="masthead">
   <a href="index.html" class="back"><span>&larr;</span> &nbsp;J.D. Vance：七个面孔</a>
   <div class="ch-tag">Chapter III of VII</div>
+  <a href="../en/metamorphosis.html" class="lang-switch" data-lang="en">EN</a>
 </header>
 
 <section class="hero">
-  <div class="hero-bg"><img src="assets/vance-trump-prayer-rnc.jpg" alt="Vance and Trump at RNC"></div>
+  <div class="hero-bg"><img src="../assets/vance-trump-prayer-rnc.jpg" alt="Vance and Trump at RNC"></div>
   <div class="hero-content">
     <div class="hero-ch">Chapter III</div>
     <h1 class="hero-title">
@@ -259,7 +281,7 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;height:au
 
 <!-- PHOTO BREAK -->
 <div class="photo-break rv">
-  <img src="assets/jd-vance-capitol-2017.jpg" alt="J.D. Vance at the US Capitol, 2017">
+  <img src="../assets/jd-vance-capitol-2017.jpg" alt="J.D. Vance at the US Capitol, 2017">
   <div class="cap">J.D. Vance at the U.S. Capitol, early in his political career</div>
 </div>
 

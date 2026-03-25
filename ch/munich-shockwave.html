@@ -105,6 +105,27 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;height:au
 .sec-light .inline-img .cap{color:var(--text-dark-muted);}
 @media(max-width:900px){.reaction-grid{grid-template-columns:1fr 1fr;}.comparison{grid-template-columns:1fr;}}
 @media(max-width:640px){.ch-nav{grid-template-columns:1fr;}.ch-nav-link:first-child{border-right:none;border-bottom:1px solid var(--border-dark);}.reaction-grid{grid-template-columns:1fr;}.timeline .tl-item{grid-template-columns:1fr;}.tl-date{font-size:0.6rem;}}
+/* Language Switch */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.lang-switch:hover {
+  border-color: rgba(255,255,255,0.5);
+  color: #fff;
+}
 </style>
 </head>
 <body>
@@ -112,11 +133,12 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;height:au
 <header class="masthead">
   <a href="index.html" class="back"><span>&larr;</span> &nbsp;J.D. Vance：七个面孔</a>
   <div class="ch-tag">Chapter V of VII</div>
+  <a href="../en/munich-shockwave.html" class="lang-switch" data-lang="en">EN</a>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"><img src="assets/munich-01.png" alt="Vance at the 61st Munich Security Conference podium"></div>
+  <div class="hero-bg"><img src="../assets/munich-01.png" alt="Vance at the 61st Munich Security Conference podium"></div>
   <div class="hero-content">
     <div class="hero-ch">Chapter V</div>
     <h1 class="hero-title"><span class="zh">慕尼黑震动</span><span class="en">The Munich Shockwave</span></h1>
@@ -137,7 +159,7 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;height:au
 
 <!-- PHOTO BREAK -->
 <div class="photo-break rv">
-  <img src="assets/munich-msc-og.jpg" alt="MSC official photo: Vance at the 61st Munich Security Conference">
+  <img src="../assets/munich-msc-og.jpg" alt="MSC official photo: Vance at the 61st Munich Security Conference">
   <div class="cap">MSC 官方照片：Vance 在第 61 届慕尼黑安全会议上发表演讲。台下坐着欧洲各国领导人和外交官。</div>
 </div>
 
@@ -250,7 +272,7 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;height:au
 
     <!-- Inline image: munich-02.jpg -->
     <div class="wide-wrap inline-img rv">
-      <img src="assets/munich-02.jpg" alt="Musk vs Greta moment at MSC">
+      <img src="../assets/munich-02.jpg" alt="Musk vs Greta moment at MSC">
       <div class="cap">Vance 在 MSC 演讲中提及 Musk 与 Greta 的对比，成为社交媒体上最广泛传播的片段。</div>
     </div>
 
@@ -311,7 +333,7 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;height:au
 
     <!-- Inline image: munich-bbc.jpg -->
     <div class="wide-wrap inline-img rv">
-      <img src="assets/munich-bbc.jpg" alt="BBC screenshot: Vance with German President Steinmeier at MSC">
+      <img src="../assets/munich-bbc.jpg" alt="BBC screenshot: Vance with German President Steinmeier at MSC">
       <div class="cap">BBC 报道截图：Vance 与德国总统 Steinmeier 在慕尼黑安全会议上的同框。</div>
     </div>
 

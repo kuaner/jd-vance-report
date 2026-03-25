@@ -87,6 +87,27 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;height:au
 .rv.vis{opacity:1;transform:translateY(0);}
 @media(max-width:900px){.investor-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:640px){.ch-nav{grid-template-columns:1fr;}.ch-nav-link:first-child{border-right:none;border-bottom:1px solid var(--border-dark);}}
+/* Language Switch */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.lang-switch:hover {
+  border-color: rgba(255,255,255,0.5);
+  color: #fff;
+}
 </style>
 </head>
 <body>
@@ -94,10 +115,11 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;height:au
 <header class="masthead">
   <a href="index.html" class="back"><span>&larr;</span> &nbsp;J.D. Vance：七个面孔</a>
   <div class="ch-tag">Chapter IV of VII</div>
+  <a href="../en/silicon-valley-kingmakers.html" class="lang-switch" data-lang="en">EN</a>
 </header>
 
 <section class="hero">
-  <div class="hero-bg"><img src="assets/vance-thiel-cbs.jpg" alt="Vance and Thiel on CBS"></div>
+  <div class="hero-bg"><img src="../assets/vance-thiel-cbs.jpg" alt="Vance and Thiel on CBS"></div>
   <div class="hero-content">
     <div class="hero-ch">Chapter IV</div>
     <h1 class="hero-title"><span class="zh">硅谷造王者</span><span class="en">The Silicon Valley Kingmakers</span></h1>
@@ -143,31 +165,31 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;height:au
     <h2 class="sec-heading">五张面孔</h2>
     <div class="investor-grid">
       <div class="investor-card rv">
-        <img src="assets/thiel-portrait-01.jpg" alt="Peter Thiel">
+        <img src="../assets/thiel-portrait-01.jpg" alt="Peter Thiel">
         <div class="investor-name">Peter Thiel</div>
         <div class="investor-role">设计师 & 首轮投资人</div>
         <div class="investor-text">$15M PAC + Narya Capital + Mar-a-Lago 引荐</div>
       </div>
       <div class="investor-card rv">
-        <img src="assets/sacks-rnc-portrait.jpg" alt="David Sacks">
+        <img src="../assets/sacks-rnc-portrait.jpg" alt="David Sacks">
         <div class="investor-name">David Sacks</div>
         <div class="investor-role">合伙人 & AI 沙皇</div>
         <div class="investor-text">$1M PAC + $12M 筹款晚宴 → 白宫职位</div>
       </div>
       <div class="investor-card rv">
-        <img src="assets/andreessen-02.jpg" alt="Marc Andreessen">
+        <img src="../assets/andreessen-02.jpg" alt="Marc Andreessen">
         <div class="investor-name">Marc Andreessen</div>
         <div class="investor-role">LP & 政策影响者</div>
         <div class="investor-text">Narya Capital LP → 加密货币/反垄断/AI 政策</div>
       </div>
       <div class="investor-card rv">
-        <img src="assets/lonsdale-02.jpg" alt="Joe Lonsdale">
+        <img src="../assets/lonsdale-02.jpg" alt="Joe Lonsdale">
         <div class="investor-name">Joe Lonsdale</div>
         <div class="investor-role">门卫 & 人脉网络</div>
         <div class="investor-text">8VC + America PAC $8M + RNC 主席</div>
       </div>
       <div class="investor-card rv">
-        <img src="assets/musk-04.jpg" alt="Elon Musk">
+        <img src="../assets/musk-04.jpg" alt="Elon Musk">
         <div class="investor-name">Elon Musk</div>
         <div class="investor-role">平台 & 最大的赌徒</div>
         <div class="investor-text">$250M America PAC + DOGE + X 平台放大</div>
@@ -218,7 +240,7 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;height:au
 
 <!-- PHOTO BREAK -->
 <div class="photo-break rv">
-  <img src="assets/thiel-2014.jpg" alt="Peter Thiel">
+  <img src="../assets/thiel-2014.jpg" alt="Peter Thiel">
   <div class="cap">Peter Thiel — the architect of Vance's political identity</div>
 </div>
 

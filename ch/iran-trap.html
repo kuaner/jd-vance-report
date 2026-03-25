@@ -145,6 +145,27 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;height:au
 
 @media(max-width:900px){.power-comp{grid-template-columns:1fr;}.data-strip{grid-template-columns:1fr 1fr;}.pf-card{grid-template-columns:1fr auto;}.pf-label{grid-column:1/-1;}}
 @media(max-width:640px){.ch-nav{grid-template-columns:1fr;}.ch-nav-link:first-child{border-right:none;border-bottom:1px solid var(--border-dark);}.reaction-grid{grid-template-columns:1fr;}.timeline .tl-item{grid-template-columns:1fr;}.tl-date{font-size:0.6rem;}.data-strip{grid-template-columns:1fr 1fr;}.sentiment-group{grid-template-columns:1fr;gap:0.5rem;}.s-bar-wrap{width:100%;}.pf-card{grid-template-columns:1fr;gap:0.75rem;}.pf-indicator{justify-self:start;}}
+/* Language Switch */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.lang-switch:hover {
+  border-color: rgba(255,255,255,0.5);
+  color: #fff;
+}
 </style>
 </head>
 <body>
@@ -152,11 +173,12 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;height:au
 <header class="masthead">
   <a href="index.html" class="back"><span>&larr;</span> &nbsp;J.D. Vance：七个面孔</a>
   <div class="ch-tag">Chapter VI of VII</div>
+  <a href="../en/iran-trap.html" class="lang-switch" data-lang="en">EN</a>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"><img src="assets/vance-speech-01.jpg" alt="Vance speaking at a public event"></div>
+  <div class="hero-bg"><img src="../assets/vance-speech-01.jpg" alt="Vance speaking at a public event"></div>
   <div class="hero-content">
     <div class="hero-ch">Chapter VI</div>
     <h1 class="hero-title"><span class="zh">伊朗困境</span><span class="en">The Iran Trap: When Anti-Warriors Get Strapped to the Chariot</span></h1>
@@ -176,7 +198,7 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;height:au
     </div>
 
     <div class="wide-wrap inline-img rv" style="margin-top:clamp(1.5rem,3vw,2.5rem);">
-      <img src="assets/iran-war-02-situation-room.jpg" alt="Vance and Cabinet Secretaries in the White House Situation Room">
+      <img src="../assets/iran-war-02-situation-room.jpg" alt="Vance and Cabinet Secretaries in the White House Situation Room">
       <div class="cap">白宫官方照片：Vance 与内阁成员在华盛顿战情室，身旁是一罐 Diet Mountain Dew。Feb 28, 2026。</div>
     </div>
 
@@ -202,7 +224,7 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;height:au
 
     <!-- Placeholder for Atlantic article image -->
     <div class="wide-wrap inline-img rv" style="margin-top:clamp(1.5rem,3vw,2.5rem);">
-      <img src="assets/iran-war-01-atlantic-vance.png" alt="Atlantic 'The Humiliation of J.D. Vance' article illustration">
+      <img src="../assets/iran-war-01-atlantic-vance.png" alt="Atlantic 'The Humiliation of J.D. Vance' article illustration">
       <div class="cap">Atlantic 封面故事配图："The Humiliation of J.D. Vance"，Mar 5, 2026。</div>
     </div>
 
@@ -339,7 +361,7 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;height:au
 
     <!-- Placeholder for NY Magazine image -->
     <div class="wide-wrap inline-img rv" style="margin-top:clamp(1.5rem,3vw,2.5rem);">
-      <img src="assets/iran-war-04-nymag-vance.jpg" alt="NY Magazine Vance portrait">
+      <img src="../assets/iran-war-04-nymag-vance.jpg" alt="NY Magazine Vance portrait">
       <div class="cap">NY Magazine 封面：Vance 在白宫中被系统性地边缘化。</div>
     </div>
 
@@ -505,7 +527,7 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;height:au
 
 <!-- Placeholder photos: Trump-Vance, Vance Air Force Two, Vance Dover salute, Vance Joint Base -->
 <div class="photo-break rv">
-  <img src="assets/vance-iraq-politico.jpg" alt="Vance in military context">
+  <img src="../assets/vance-iraq-politico.jpg" alt="Vance in military context">
   <div class="cap">Vance 与军事相关的公开活动照片。</div>
 </div>
 
@@ -591,7 +613,7 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;height:au
 
 <!-- Placeholder: Trump-Vance photo -->
 <div class="wide-wrap inline-img rv" style="padding:0 var(--pad);">
-  <img src="assets/mar-a-lago-war-room-01.jpg" alt="Trump at Mar-a-Lago situation room during Iran strikes">
+  <img src="../assets/mar-a-lago-war-room-01.jpg" alt="Trump at Mar-a-Lago situation room during Iran strikes">
   <div class="cap">白宫官方照片：Trump 在 Mar-a-Lago 战情室指挥伊朗打击行动。</div>
 </div>
 
@@ -627,7 +649,7 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;height:au
 
     <!-- Placeholder: Vance at Joint Base Andrews -->
     <div class="wide-wrap inline-img rv" style="margin-top:clamp(1.5rem,3vw,2.5rem);">
-      <img src="assets/iran-war-08-joint-base.jpg" alt="Vance boarding Air Force Two at Joint Base Andrews">
+      <img src="../assets/iran-war-08-joint-base.jpg" alt="Vance boarding Air Force Two at Joint Base Andrews">
       <div class="cap">Vance 在 Joint Base Andrews 登上空军二号。Mar 9, 2026。AP Photo。</div>
     </div>
 
@@ -704,13 +726,13 @@ a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;height:au
 
     <!-- Placeholder: Turning Point USA -->
     <div class="wide-wrap inline-img rv" style="margin-top:clamp(1.5rem,3vw,2.5rem);">
-      <img src="assets/vance-power-01-turning-point.jpg" alt="Vance speaks at Turning Point USA AmericaFest">
+      <img src="../assets/vance-power-01-turning-point.jpg" alt="Vance speaks at Turning Point USA AmericaFest">
       <div class="cap">Vance 在 Turning Point USA 的 AmericaFest 大会上发表演讲。Dec 2025。Reuters。</div>
     </div>
 
     <!-- Placeholder: White House briefing room -->
     <div class="wide-wrap inline-img rv" style="margin-top:clamp(1rem,2vw,1.5rem);">
-      <img src="assets/vance-power-02-wh-briefing.jpg" alt="Vance at White House press briefing">
+      <img src="../assets/vance-power-02-wh-briefing.jpg" alt="Vance at White House press briefing">
       <div class="cap">Vance 在白宫新闻简报室发言。Jan 8, 2026。UPI。</div>
     </div>
 

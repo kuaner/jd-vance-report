@@ -230,6 +230,27 @@ img { display: block; max-width: 100%; height: auto; }
   .ch-nav { grid-template-columns: 1fr; }
   .ch-nav-link:first-child { border-right: none; border-bottom: 1px solid var(--border-dark); }
 }
+/* Language Switch */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.lang-switch:hover {
+  border-color: rgba(255,255,255,0.5);
+  color: #fff;
+}
 </style>
 </head>
 <body>
@@ -237,12 +258,13 @@ img { display: block; max-width: 100%; height: auto; }
 <header class="masthead">
   <a href="index.html" class="back"><span>&larr;</span> &nbsp;J.D. Vance：七个面孔</a>
   <div class="ch-tag">Chapter I of VII</div>
+  <a href="../en/rust-belt-son.html" class="lang-switch" data-lang="en">EN</a>
 </header>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg">
-    <img src="assets/vance-portrait-01.jpg" alt="J.D. Vance">
+    <img src="../assets/vance-portrait-01.jpg" alt="J.D. Vance">
   </div>
   <div class="hero-content">
     <div class="hero-ch">Chapter I</div>
@@ -320,7 +342,7 @@ img { display: block; max-width: 100%; height: auto; }
 
 <!-- PHOTO BREAK -->
 <div class="photo-break rv">
-  <img src="assets/vance-iraq-politico.jpg" alt="J.D. Vance during Iraq deployment">
+  <img src="../assets/vance-iraq-politico.jpg" alt="J.D. Vance during Iraq deployment">
   <div class="cap">J.D. Vance served as a combat correspondent at Al-Asad Airbase, Iraq, 2005-2006</div>
 </div>
 

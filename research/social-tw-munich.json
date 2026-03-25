@@ -1,0 +1,4 @@
+Usage: twitter search [OPTIONS] [QUERY]
+Try 'twitter search --help' for help.
+
+Error: No such option: --limit

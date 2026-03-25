@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J.D. Vance：七个面孔 — 深度调查报告</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Space+Grotesk:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   TOKENS
+   ═══════════════════════════════════════════ */
+:root {
+  --bg-dark: oklch(0.11 0.015 30);
+  --bg-dark-alt: oklch(0.14 0.018 30);
+  --bg-dark-card: oklch(0.17 0.015 28);
+  --bg-light: oklch(0.965 0.004 70);
+  --bg-light-warm: oklch(0.94 0.008 75);
+
+  --text-light: oklch(0.92 0.006 70);
+  --text-light-dim: oklch(0.72 0.012 65);
+  --text-dark: oklch(0.13 0.02 30);
+  --text-dark-sec: oklch(0.38 0.015 30);
+  --text-dark-muted: oklch(0.58 0.01 55);
+
+  --accent: oklch(0.55 0.22 30);
+  --accent-light: oklch(0.68 0.16 32);
+  --accent-dim: oklch(0.30 0.08 30);
+  --accent-glow: oklch(0.55 0.22 30 / 0.15);
+
+  --border-dark: oklch(0.25 0.02 30);
+  --border-light: oklch(0.85 0.008 70);
+
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'Noto Sans SC', system-ui, sans-serif;
+  --mono: 'Space Grotesk', monospace;
+
+  --wide: 1140px;
+  --narrow: 680px;
+  --pad: clamp(1.5rem, 5vw, 4rem);
+}
+
+/* ═══════════════════════════════════════════
+   RESET
+   ═══════════════════════════════════════════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: var(--sans);
+  background: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.8;
+  font-size: 16px;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; height: auto; }
+
+/* ═══════════════════════════════════════════
+   NAV
+   ═══════════════════════════════════════════ */
+.masthead {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 0 0 0 var(--pad);
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: oklch(0.11 0.015 30 / 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background 0.4s ease;
+}
+.masthead .brand {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-light-dim);
+}
+.masthead .brand span { color: var(--accent); }
+.masthead .meta {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.06em;
+  color: oklch(0.50 0.01 55);
+  padding-right: var(--pad);
+}
+
+/* ═══════════════════════════════════════════
+   CONTAINERS
+   ═══════════════════════════════════════════ */
+.wide-wrap {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+.narrow-wrap {
+  max-width: var(--narrow);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+/* ═══════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════ */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(0.5) contrast(1.15) brightness(0.7);
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg,
+      oklch(0.11 0.015 30 / 0.25) 0%,
+      oklch(0.11 0.015 30 / 0.6) 60%,
+      oklch(0.11 0.015 30 / 0.95) 100%
+    );
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: clamp(5rem, 12vw, 10rem) var(--pad) clamp(3.5rem, 8vw, 6rem);
+  max-width: var(--wide);
+  margin: 0 auto;
+  width: 100%;
+}
+.hero-overline {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.hero-overline::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+}
+.hero-title {
+  font-family: var(--serif);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+.hero-title .line-1 {
+  font-size: clamp(3.2rem, 8vw, 6.5rem);
+  display: block;
+}
+.hero-title .line-2 {
+  font-size: clamp(2.4rem, 6vw, 4.8rem);
+  display: block;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--text-light-dim);
+}
+.hero-desc {
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  font-style: italic;
+  color: var(--text-light-dim);
+  line-height: 1.6;
+  max-width: 560px;
+}
+.hero-date {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  color: oklch(0.45 0.01 55);
+  text-transform: uppercase;
+  margin-top: 2.5rem;
+}
+
+/* ═══════════════════════════════════════════
+   SECTION UTILITIES
+   ═══════════════════════════════════════════ */
+.sec-dark {
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+.sec-dark-alt {
+  background: var(--bg-dark-alt);
+  color: var(--text-light);
+}
+.sec-light {
+  background: var(--bg-light);
+  color: var(--text-dark);
+}
+.sec-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.sec-dark .sec-label,
+.sec-dark-alt .sec-label { color: var(--accent); }
+.sec-light .sec-label { color: var(--text-dark-muted); }
+
+.sec-heading {
+  font-family: var(--serif);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 2rem;
+}
+.sec-dark .sec-heading,
+.sec-dark-alt .sec-heading { color: var(--text-light); }
+.sec-light .sec-heading { color: var(--text-dark); }
+
+/* ═══════════════════════════════════════════
+   EPIGRAPH
+   ═══════════════════════════════════════════ */
+.epigraph-sec {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+}
+.epigraph-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--pad);
+  position: relative;
+}
+.epigraph-inner::before {
+  content: '';
+  position: absolute;
+  left: var(--pad);
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-dim));
+}
+.epigraph-text {
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  font-style: italic;
+  line-height: 1.75;
+  color: var(--text-light);
+  padding-left: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: 1.25rem;
+}
+.epigraph-src {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--text-light-dim);
+  padding-left: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+/* ═══════════════════════════════════════════
+   PULL QUOTE — THE HOOK
+   ═══════════════════════════════════════════ */
+.hook-sec {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+}
+.hook-quote {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--text-light);
+  max-width: 900px;
+}
+.hook-quote em {
+  font-weight: 400;
+  font-style: italic;
+  color: var(--accent-light);
+}
+.hook-attr {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--text-light-dim);
+  margin-top: 1.5rem;
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════
+   INTRO NARRATIVE
+   ═══════════════════════════════════════════ */
+.intro-sec {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+}
+.intro-sec p {
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  line-height: 1.9;
+  color: var(--text-dark);
+  margin-bottom: 1.4rem;
+}
+.intro-sec p:last-of-type { margin-bottom: 0; }
+.intro-sec strong {
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* ═══════════════════════════════════════════
+   STATS BAR — full-width dramatic strip
+   ═══════════════════════════════════════════ */
+.stats-sec {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background: var(--bg-dark-alt);
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--border-dark);
+  border-bottom: 1px solid var(--border-dark);
+}
+.stat-item {
+  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 2vw, 2rem);
+  position: relative;
+}
+.stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 25%;
+  height: 50%;
+  width: 1px;
+  background: var(--border-dark);
+}
+.stat-val {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--accent-light);
+  margin-bottom: 0.5rem;
+}
+.stat-val.negative { color: oklch(0.60 0.18 28); }
+.stat-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-light-dim);
+  margin-bottom: 0.4rem;
+}
+.stat-note {
+  font-size: 0.82rem;
+  color: oklch(0.55 0.01 55);
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════
+   FULL-BLEED PHOTO BREAK
+   ═══════════════════════════════════════════ */
+.photo-break {
+  width: 100%;
+  height: clamp(280px, 45vw, 520px);
+  overflow: hidden;
+  position: relative;
+}
+.photo-break img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.3) contrast(1.08);
+}
+.photo-break .photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem var(--pad);
+  background: linear-gradient(0deg, oklch(0.11 0.015 30 / 0.8) 0%, transparent 100%);
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  color: var(--text-light-dim);
+}
+
+/* ═══════════════════════════════════════════
+   CONTRADICTIONS — THE DRAMATIC CENTERPIECE
+   ═══════════════════════════════════════════ */
+.contra-sec {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+}
+.contra-heading-area {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: 0 var(--pad) clamp(3rem, 5vw, 4rem);
+}
+.contra-heading-area .sec-heading {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+}
+.contra-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border-dark);
+}
+.contra-item {
+  background: var(--bg-dark);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.contra-then {
+  font-size: 0.88rem;
+  color: var(--text-light-dim);
+  padding-left: 1rem;
+  border-left: 2px solid oklch(0.35 0.06 30);
+  line-height: 1.5;
+}
+.contra-now {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-light);
+  padding-left: 1rem;
+  border-left: 2px solid var(--accent);
+  line-height: 1.5;
+}
+.contra-yr {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  color: oklch(0.45 0.01 55);
+  padding-left: 1rem;
+}
+
+/* ═══════════════════════════════════════════
+   CHAPTER GUIDE
+   ═══════════════════════════════════════════ */
+.chapters-sec {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+}
+.chapters-sec .sec-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+.ch-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+.ch-link {
+  display: block;
+  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.5rem, 3vw, 2.5rem);
+  border-bottom: 1px solid var(--border-light);
+  transition: background 0.25s ease;
+}
+.ch-link:nth-child(odd) {
+  border-right: 1px solid var(--border-light);
+}
+.ch-link:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+.ch-link:hover {
+  background: oklch(0.93 0.008 70);
+}
+.ch-link-top {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+}
+.ch-roman {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--accent);
+  line-height: 1;
+}
+.ch-title {
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.25;
+}
+.ch-subtitle {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  color: var(--text-dark-muted);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.ch-summary {
+  font-size: 0.85rem;
+  color: var(--text-dark-sec);
+  line-height: 1.65;
+}
+
+/* ═══════════════════════════════════════════
+   METHODOLOGY
+   ═══════════════════════════════════════════ */
+.method-sec {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  border-top: 1px solid var(--border-light);
+}
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+}
+.method-label {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dark-muted);
+  margin-bottom: 0.3rem;
+}
+.method-val {
+  font-size: 0.82rem;
+  color: var(--text-dark-sec);
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+.foot {
+  padding: 2.5rem 0;
+  text-align: center;
+}
+.foot p {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  color: oklch(0.45 0.01 55);
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════
+   REVEAL ANIMATIONS
+   ═══════════════════════════════════════════ */
+.rv {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.rv.vis {
+  opacity: 1;
+  transform: translateY(0);
+}
+.rv-d1 { transition-delay: 0.08s; }
+.rv-d2 { transition-delay: 0.16s; }
+.rv-d3 { transition-delay: 0.24s; }
+.rv-d4 { transition-delay: 0.32s; }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .stat-item:nth-child(2)::after { display: none; }
+  .contra-grid { grid-template-columns: repeat(2, 1fr); }
+  .ch-grid { grid-template-columns: 1fr; }
+  .ch-link:nth-child(odd) { border-right: none; }
+  .ch-link:nth-last-child(-n+1) { border-bottom: none; }
+  .method-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .contra-grid { grid-template-columns: 1fr; }
+  .method-grid { grid-template-columns: 1fr; }
+  .hero-title .line-1 { font-size: clamp(2.4rem, 12vw, 3.5rem); }
+  .hero-title .line-2 { font-size: clamp(1.8rem, 9vw, 2.8rem); }
+  .hook-quote { font-size: clamp(1.4rem, 5vw, 2rem); }
+}
+/* Language Switch */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.lang-switch:hover {
+  border-color: rgba(255,255,255,0.5);
+  color: #fff;
+}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="brand">Investigative <span>Report</span></div>
+  <div class="meta">2026.03 &mdash; 7 Chapters &mdash; 58 Sources</div>
+  <a href="../en/index.html" class="lang-switch" data-lang="en">EN</a>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="../assets/vance-official-01.jpg" alt="J.D. Vance official portrait">
+  </div>
+  <div class="hero-content">
+    <div class="hero-overline">Deep Investigation</div>
+    <h1 class="hero-title">
+      <span class="line-1">J.D. Vance</span>
+      <span class="line-2">七个面孔</span>
+    </h1>
+    <p class="hero-desc">从一个铁锈带青年到美国副总统的权力解剖</p>
+    <div class="hero-date">March 2026 &mdash; Seven Chapters &mdash; 58 Sources</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     EPIGRAPH
+     ═══════════════════════════════════════════ -->
+<section class="epigraph-sec sec-dark rv">
+  <div class="epigraph-inner">
+    <p class="epigraph-text">在刺猬与狐狸之间，有些人的变化不是进化，而是适应。他们不是在寻找真相，而是在寻找庇护者。每一次蜕皮都让他们更加光滑，也更难被抓住。</p>
+    <p class="epigraph-src">改编自以赛亚&middot;伯林《刺猬与狐狸》</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     HOOK — dramatic pull quote
+     ═══════════════════════════════════════════ -->
+<section class="hook-sec sec-dark-alt">
+  <div class="wide-wrap rv">
+    <blockquote class="hook-quote">
+      2016年，他称特朗普是<em>"美国的希特勒"</em>。2025年，他站在特朗普身旁，成为副总统。<em>九年间，他改了名字，改了宗教，改了对几乎所有重大政治议题的立场。</em>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     INTRO NARRATIVE
+     ═══════════════════════════════════════════ -->
+<section class="intro-sec sec-light">
+  <div class="narrow-wrap rv">
+    <p>J.D. Vance 是美国政治中最令人困惑的人物之一。</p>
+    <p>这些转变的背后，不是某个深层信念的指引，而是一条精密计算的权力上升通道。从俄亥俄铁锈带到耶鲁法学院，从硅谷风险投资到美国参议院，每一个落脚点都有一个人为他打开门：<strong>Peter Thiel</strong> 用资本投资他，<strong>David Sacks</strong> 用人脉推介他，<strong>Donald Trump Jr.</strong> 用政治影响力为他扫清道路，<strong>Elon Musk</strong> 用舆论机器为他造势。</p>
+    <p>他不是传统意义上的政客。他是一件被精心制造的产品——硅谷的技术精英们需要一个能在华盛顿代言的人，而一个来自铁锈带的退伍军人，恰好符合所有条件：他有苦难叙事，有学术资历，有军事履历，还有一个能让白人蓝领选民产生共鸣的乡巴佬故事。</p>
+    <p>这份报告追踪了这条从Middletown到白宫之路的每一个关键节点。它不是一份人物传记——它是一次系统性的解剖，试图回答一个更深层的问题：在特朗普之后的美国，权力的传递方式正在发生怎样的变化？</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     KEY STATISTICS
+     ═══════════════════════════════════════════ -->
+<section class="stats-sec rv">
+  <div class="wide-wrap">
+    <div class="sec-label">By the Numbers</div>
+  </div>
+  <div class="stats-grid wide-wrap">
+    <div class="stat-item rv rv-d1">
+      <div class="stat-val">7</div>
+      <div class="stat-label">Identity Shifts</div>
+      <div class="stat-note">名字、宗教、党派、六个政策领域的立场翻转</div>
+    </div>
+    <div class="stat-item rv rv-d2">
+      <div class="stat-val">$2.5亿</div>
+      <div class="stat-label">Silicon Valley PAC</div>
+      <div class="stat-note">Musk 超级 PAC + Thiel/Sacks 等精英投入</div>
+    </div>
+    <div class="stat-item rv rv-d3">
+      <div class="stat-val">52%</div>
+      <div class="stat-label">Primary Lead</div>
+      <div class="stat-note">共和党初选遥遥领先，但大选堪忧</div>
+    </div>
+    <div class="stat-item rv rv-d4">
+      <div class="stat-val negative">&minus;9.2</div>
+      <div class="stat-label">Net Favorability</div>
+      <div class="stat-note">好感度从 +9 跌至 &minus;16</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PHOTO BREAK
+     ═══════════════════════════════════════════ -->
+<div class="photo-break rv">
+  <img src="../assets/jd-vance-swearing-in.jpg" alt="J.D. Vance sworn in as Vice President">
+  <div class="photo-caption">J.D. Vance is sworn in as the 50th Vice President of the United States, January 2025</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     CONTRADICTIONS
+     ═══════════════════════════════════════════ -->
+<section class="contra-sec sec-dark">
+  <div class="contra-heading-area rv">
+    <div class="sec-label">Core Contradictions</div>
+    <h2 class="sec-heading">核心矛盾</h2>
+  </div>
+  <div class="contra-grid wide-wrap rv">
+    <div class="contra-item">
+      <div class="contra-yr">2016</div>
+      <div class="contra-then">称 Trump 是"美国的希特勒"</div>
+      <div class="contra-yr">2025</div>
+      <div class="contra-now">成为 Trump 的副总统</div>
+    </div>
+    <div class="contra-item">
+      <div class="contra-yr">2016</div>
+      <div class="contra-then">反对外国军事干预</div>
+      <div class="contra-yr">2025</div>
+      <div class="contra-now">支持对伊朗采取军事行动</div>
+    </div>
+    <div class="contra-item">
+      <div class="contra-yr">2016</div>
+      <div class="contra-then">支持自由贸易</div>
+      <div class="contra-yr">2022</div>
+      <div class="contra-now">转向支持关税保护</div>
+    </div>
+    <div class="contra-item">
+      <div class="contra-yr">2020</div>
+      <div class="contra-then">批评 Big Tech 垄断</div>
+      <div class="contra-yr">2024</div>
+      <div class="contra-now">与硅谷精英深度绑定</div>
+    </div>
+    <div class="contra-item">
+      <div class="contra-yr">2016</div>
+      <div class="contra-then">对移民持开放态度</div>
+      <div class="contra-yr">2024</div>
+      <div class="contra-now">鼓吹最严厉的移民政策</div>
+    </div>
+    <div class="contra-item">
+      <div class="contra-yr">2012</div>
+      <div class="contra-then">自认进步派 / 中间派</div>
+      <div class="contra-yr">2024</div>
+      <div class="contra-now">MAGA 运动的标准旗帜</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CHAPTER GUIDE
+     ═══════════════════════════════════════════ -->
+<section class="chapters-sec sec-light">
+  <div class="wide-wrap">
+    <div class="sec-label rv">Seven Chapters</div>
+    <h2 class="sec-heading rv">报告全文</h2>
+    <div class="ch-grid rv">
+      <a class="ch-link" href="rust-belt-son.html">
+        <div class="ch-link-top">
+          <span class="ch-roman">I</span>
+          <h3 class="ch-title">铁锈带之子</h3>
+        </div>
+        <div class="ch-subtitle">Son of the Rust Belt</div>
+        <p class="ch-summary">创伤如何锻造了信念。从三次改名到"习得性无助"理论，Vance 的童年不是美国梦，而是一颗延迟爆炸的炸弹。</p>
+      </a>
+      <a class="ch-link" href="hillbilly-elegy.html">
+        <div class="ch-link-top">
+          <span class="ch-roman">II</span>
+          <h3 class="ch-title">乡下人的悲歌</h3>
+        </div>
+        <div class="ch-subtitle">Hillbilly Elegy</div>
+        <p class="ch-summary">一本300万册的书如何让他从匿名风投人变成"特朗普现象解读者"——以及他后来如何背叛了书中所描述的那个世界。</p>
+      </a>
+      <a class="ch-link" href="metamorphosis.html">
+        <div class="ch-link-top">
+          <span class="ch-roman">III</span>
+          <h3 class="ch-title">蜕变</h3>
+        </div>
+        <div class="ch-subtitle">Metamorphosis</div>
+        <p class="ch-summary">"America's Hitler"到副总统。不是渐进变化，而是精准计算。六个政策领域的180度翻转，每一步都有时间戳和证据。</p>
+      </a>
+      <a class="ch-link" href="silicon-valley-kingmakers.html">
+        <div class="ch-link-top">
+          <span class="ch-roman">IV</span>
+          <h3 class="ch-title">硅谷造王者</h3>
+        </div>
+        <div class="ch-subtitle">The Silicon Valley Kingmakers</div>
+        <p class="ch-summary">Thiel $1500万赌注，Sacks $1200万筹款，Musk $2.5亿超级 PAC。"他不是政客，他是产品。"</p>
+      </a>
+      <a class="ch-link" href="munich-shockwave.html">
+        <div class="ch-link-top">
+          <span class="ch-roman">V</span>
+          <h3 class="ch-title">慕尼黑震动</h3>
+        </div>
+        <div class="ch-subtitle">The Munich Shockwave</div>
+        <p class="ch-summary">一场让欧洲领导人"相当震惊和困惑"的演讲，标志着"后特朗普时代保守主义"的宣言。一年后，他的肖像在会场被植物遮挡。</p>
+      </a>
+      <a class="ch-link" href="iran-trap.html">
+        <div class="ch-link-top">
+          <span class="ch-roman">VI</span>
+          <h3 class="ch-title">伊朗困境</h3>
+        </div>
+        <div class="ch-subtitle">The Iran Trap</div>
+        <p class="ch-summary">反战者被绑上战车。Atlantic 用"屈辱"定义他的处境。五个政策领域的全面溃败，从"最有权力的副总统"到"儿童桌"。</p>
+      </a>
+      <a class="ch-link" href="road-to-the-throne.html">
+        <div class="ch-link-top">
+          <span class="ch-roman">VII</span>
+          <h3 class="ch-title">王座之路</h3>
+        </div>
+        <div class="ch-subtitle">The Road to the Throne</div>
+        <p class="ch-summary">初选领先但大选堪忧。Rubio 深度挖掘：从"Lil' Marco"到"史上最伟大国务卿"的漫长复仇。所有矛盾汇聚为最终判断。</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     METHODOLOGY
+     ═══════════════════════════════════════════ -->
+<section class="method-sec sec-light">
+  <div class="wide-wrap rv">
+    <div class="sec-label">Methodology</div>
+    <div class="method-grid">
+      <div class="method-item">
+        <div class="method-label">民调来源</div>
+        <div class="method-val">RCP, Emerson, Pew, Rasmussen, YouGov, DDHQ</div>
+      </div>
+      <div class="method-item">
+        <div class="method-label">社媒数据</div>
+        <div class="method-val">Twitter 159 + Reddit 60 = 219 条</div>
+      </div>
+      <div class="method-item">
+        <div class="method-label">预测市场</div>
+        <div class="method-val">Kalshi, Polymarket, DraftKings</div>
+      </div>
+      <div class="method-item">
+        <div class="method-label">新闻来源</div>
+        <div class="method-val">Atlantic, Politico, WP, Reuters, BBC, NPR 等</div>
+      </div>
+      <div class="method-item">
+        <div class="method-label">注释</div>
+        <div class="method-val">58 个独立来源，见各章节末尾</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot sec-dark">
+  <div class="wide-wrap">
+    <p>Investigative Report &mdash; March 2026</p>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal with IntersectionObserver
+(function() {
+  var els = document.querySelectorAll('.rv');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el) { el.classList.add('vis'); });
+    return;
+  }
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('vis');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el) { obs.observe(el); });
+})();
+
+// Masthead background on scroll
+(function() {
+  var m = document.querySelector('.masthead');
+  var ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(function() {
+        m.style.background = window.scrollY > 80
+          ? 'oklch(0.11 0.015 30 / 0.95)'
+          : 'oklch(0.11 0.015 30 / 0.85)';
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+})();
+</script>
+</body>
+</html>
